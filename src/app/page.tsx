@@ -24,7 +24,7 @@ export default function Home() {
           <div className="flex flex-wrap justify-center gap-6 text-sm md:text-base">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-              <span>8+ Projects Delivered</span>
+              <span>8 Projects Delivered</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 bg-blue-500 rounded-full"></span>

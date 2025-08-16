@@ -347,45 +347,6 @@ const projectsData: Record<string, ProjectDetail> = {
       "Real-time data synchronization",
       "User experience design for event platforms"
     ]
-  },
-  "portfolio": {
-    id: "portfolio",
-    title: "Personal Portfolio",
-    description: "A modern, responsive portfolio website built with Next.js 15 showcasing projects, skills, and professional experience with interactive animations.",
-    longDescription: "A comprehensive personal portfolio website built with cutting-edge web technologies. This project showcases my development skills, professional experience, and project portfolio in an interactive and visually appealing format. The website features responsive design, smooth animations, and modern UI components to create an engaging user experience.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    imageUrl: "/Images/Portfolio-91ASWIBOnzkqsjBTg5zB3HSDsFUgWZ.png",
-    liveUrl: "#",
-    githubUrl: "https://github.com/renhotsai/portfolio",
-    features: [
-      "Responsive design optimized for all devices",
-      "Interactive projects carousel with auto-rotation",
-      "Project detail pages with comprehensive information",
-      "Skills and experience showcase with visual badges",
-      "Modern UI built with shadcn/ui components",
-      "Smooth animations powered by Framer Motion",
-      "Dark mode support with Tailwind CSS",
-      "SEO optimized with Next.js App Router"
-    ],
-    techStack: {
-      frontend: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS v4"],
-      backend: ["Next.js API Routes", "Server Components"],
-      database: ["PostgreSQL"],
-      tools: ["Vercel", "Git", "VS Code", "shadcn/ui"]
-    },
-    challenges: [
-      "Implementing auto-rotating carousel with manual navigation",
-      "Creating responsive design that works across all device sizes",
-      "Optimizing performance with Next.js 15 and Turbopack",
-      "Designing engaging animations without compromising accessibility"
-    ],
-    learnings: [
-      "Advanced Next.js 15 App Router patterns",
-      "Modern CSS techniques with Tailwind CSS v4",
-      "Component composition with shadcn/ui",
-      "Performance optimization strategies",
-      "Responsive design best practices"
-    ]
   }
 };
 
