@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Link from "next/link";
 
 const skills = {
   Programming: ["JavaScript", "TypeScript", "Swift", "Kotlin", "C#", "Node.js"],
@@ -31,7 +32,9 @@ const AboutPage = () => {
               <p className="text-muted-foreground text-lg text-left">
                 Backend Engineer and Full-Stack Developer with 5+ years of coding experience, including 3+ years of professional experience in backend systems and payment processing integration. Currently pursuing advanced cloud computing studies at George Brown College. Experienced in Agile development methodologies and delivering high-quality, maintainable code. Specialized in building robust web applications, RESTful APIs, and scalable backend systems using C#, JavaScript/TypeScript, Node.js, and modern cloud technologies. Proven expertise in AWS cloud architecture, database optimization, and creating enterprise-level solutions that handle high-volume transactions.
               </p>
-              <Button>Download Resume</Button>
+              <Link href="/JeremyTsai-2025.pdf" target="_blank" rel="noopener noreferrer">
+                <Button>Download Resume</Button>
+              </Link>
             </div>
           </div>
         </div>
