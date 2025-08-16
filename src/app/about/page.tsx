@@ -5,12 +5,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const skills = {
-  Programming: ["JavaScript", "Swift", "Kotlin", "C#"],
-  Web: ["HTML5", "CSS3", "Node.js", "Express.js", "Nest.js", "Next.js"],
-  Mobile: ["React Native"],
-  "Database Management": ["MSSQL", "MongoDB", "Firebase", "PostgreSQL"],
-  "Cloud Computing": ["Azure", "AWS", "Microsoft 365"],
-  Tools: ["Git", "TypeScript", "Framer Motion", "Tailwind CSS"],
+  Programming: ["JavaScript", "TypeScript", "Swift", "Kotlin", "C#", "Node.js"],
+  "Web & Frontend": ["Next.js", "React", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
+  "Mobile Development": ["React Native", "iOS Development", "Android Development", "Expo"],
+  "Backend & APIs": ["Express.js", "RESTful APIs", "Serverless Functions", "AWS Lambda"],
+  "Database & Storage": ["PostgreSQL", "MongoDB", "MSSQL", "Firebase", "Amazon S3", "Amazon RDS"],
+  "Cloud & DevOps": ["AWS", "Azure", "Docker", "Amazon ECS", "Amazon ECR", "CloudFront"],
+  "AWS Services": ["AWS Textract", "VPC", "Route 53", "Application Load Balancer", "Auto Scaling Groups", "IAM"],
+  "Development Tools": ["Git", "VS Code", "Xcode", "Android Studio", "Expo CLI", "npm"]
 };
 
 const AboutPage = () => {
@@ -19,16 +21,18 @@ const AboutPage = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
         {/* Left Side - Hero Section */}
         <div className="lg:col-span-4">
-          <div className="flex flex-col items-center text-center lg:text-left lg:items-start lg:sticky lg:top-8">
-            <Avatar className="w-32 h-32 mb-6">
-              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+          <div className="flex flex-col items-center lg:sticky lg:top-8 space-y-8">
+            <Avatar className="w-56 h-56">
+              <AvatarImage src="/Images/Jeremy-WFcyBsvIZyLUozH4k7MON7w2tFfIbj.jpg" alt="Jeremy" className="object-cover scale-150 object-top" />
               <AvatarFallback>JT</AvatarFallback>
             </Avatar>
-            <h1 className="text-4xl font-bold mb-4">About Me</h1>
-            <p className="text-muted-foreground mb-6 text-lg">
-              Backend Engineer with expertise in developing and integrating RESTful APIs, optimizing database performance, and managing AWS infrastructure. Proficient in C#, MSSQL, and modular coding practices.
-            </p>
-            <Button>Download Resume</Button>
+            <div className="space-y-6">
+              <h1 className="text-4xl font-bold text-center">About Me</h1>
+              <p className="text-muted-foreground text-lg text-left">
+                Backend Engineer and Full-Stack Developer with 5+ years of coding experience, including 3+ years of professional experience in backend systems and payment processing integration. Currently pursuing advanced cloud computing studies at George Brown College. Specialized in building robust web applications, RESTful APIs, and scalable backend systems using C#, JavaScript/TypeScript, Node.js, and modern cloud technologies. Proven expertise in AWS cloud architecture, database optimization, and creating enterprise-level solutions that handle high-volume transactions.
+              </p>
+              <Button>Download Resume</Button>
+            </div>
           </div>
         </div>
 
@@ -68,10 +72,18 @@ const AboutPage = () => {
               <h3 className="text-2xl font-semibold mb-2">Backend Engineer</h3>
               <p className="text-muted-foreground text-lg mb-1">Collaborate Technology</p>
               <p className="text-sm text-muted-foreground mb-4">April 2021 - August 2023 • Taipei, Taiwan</p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <Badge variant="secondary">C#</Badge>
+                <Badge variant="secondary">RESTful APIs</Badge>
+                <Badge variant="secondary">MSSQL</Badge>
+                <Badge variant="secondary">Payment Systems</Badge>
+                <Badge variant="secondary">Database Optimization</Badge>
+              </div>
               <ul className="space-y-2 list-disc pl-5">
-                <li>Orchestrated the integration of RESTful APIs with third-party payment systems</li>
-                <li>Implemented robust logging mechanisms to meticulously record payment transactions, facilitating streamlined bug identification and resolution through effective log analysis</li>
-                <li>Managed and executed intricate MSSQL operations, optimizing database performance and query execution</li>
+                <li>Designed and integrated RESTful APIs with third-party payment systems, ensuring secure and reliable transaction processing</li>
+                <li>Developed comprehensive logging systems to track payment transactions, enabling rapid debugging and improving system reliability</li>
+                <li>Optimized complex MSSQL database operations and queries, resulting in improved performance and faster response times</li>
+                <li>Collaborated with cross-functional teams to deliver scalable backend solutions supporting high-volume transactions</li>
               </ul>
             </div>
             
@@ -79,9 +91,18 @@ const AboutPage = () => {
               <h3 className="text-2xl font-semibold mb-2">Software Engineer</h3>
               <p className="text-muted-foreground text-lg mb-1">Harmonation Inc.</p>
               <p className="text-sm text-muted-foreground mb-4">November 2020 – April 2021 • Taipei, Taiwan</p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <Badge variant="secondary">C#</Badge>
+                <Badge variant="secondary">Windows Applications</Badge>
+                <Badge variant="secondary">MSSQL</Badge>
+                <Badge variant="secondary">Banking Systems</Badge>
+                <Badge variant="secondary">UI/UX</Badge>
+              </div>
               <ul className="space-y-2 list-disc pl-5">
-                <li>Enhanced user interface efficiency and reduced transaction processing time by tailoring Windows applications for banking, resulting in increased customer satisfaction</li>
-                <li>Utilized C# to communicate with MSSQL databases, enhancing data retrieval and storage capabilities, and implemented optimized queries to improve database response times</li>
+                <li>Developed and optimized Windows applications for banking sector, improving user interface efficiency and reducing transaction processing time</li>
+                <li>Built robust C# applications with MSSQL database integration, enhancing data retrieval capabilities and system performance</li>
+                <li>Implemented database optimization strategies that significantly improved query response times and overall application performance</li>
+                <li>Delivered solutions that increased customer satisfaction through improved application reliability and user experience</li>
               </ul>
             </div>
           </div>
@@ -90,26 +111,34 @@ const AboutPage = () => {
         <TabsContent value="education" className="mt-8">
           <div className="space-y-8">
             <div className="border-l-2 border-primary pl-6 py-4">
-              <h3 className="text-2xl font-semibold mb-2">Cloud Computing Technologies Certificate</h3>
-              <p className="text-muted-foreground text-lg mb-1">George Brown College</p>
-              <p className="text-sm text-muted-foreground mb-4">September 2024 – August 2025 • Toronto, ON</p>
+              <h3 className="text-2xl font-semibold mb-2">Cloud Computing Technologies Program</h3>
+              <p className="text-muted-foreground text-lg mb-1">George Brown College • Ontario College Graduate Certificate</p>
+              <p className="text-sm text-muted-foreground mb-4">September 2024 – August 2025 • Casa Loma Campus, Toronto, ON</p>
               <ul className="space-y-1 list-disc pl-5">
-                <li>Microsoft 365</li>
-                <li>Azure</li>
-                <li>AWS</li>
+                <li>Microsoft Azure Administration and Architecture</li>
+                <li>Amazon Web Services (AWS) Cloud Practitioner and Solutions Architecture</li>
+                <li>Cloud security implementation and best practices</li>
+                <li>Microsoft 365 Identity and Services</li>
+                <li>Advanced Linux and Windows Server Infrastructure</li>
+                <li>Network fundamentals and system administration</li>
+                <li>Career planning and portfolio development</li>
+                <li>Work-integrated project</li>
               </ul>
             </div>
             
             <div className="border-l-2 border-primary pl-6 py-4">
-              <h3 className="text-2xl font-semibold mb-2">Mobile Application Development & Strategy</h3>
-              <p className="text-muted-foreground text-lg mb-1">George Brown College • Postgrad Certificate</p>
-              <p className="text-sm text-muted-foreground mb-4">September 2023 – August 2024 • Toronto, ON</p>
+              <h3 className="text-2xl font-semibold mb-2">Mobile Application Development and Strategy Program</h3>
+              <p className="text-muted-foreground text-lg mb-1">George Brown College • Ontario College Graduate Certificate</p>
+              <p className="text-sm text-muted-foreground mb-4">September 2023 – August 2024 • Casa Loma Campus, Toronto, ON</p>
               <ul className="space-y-1 list-disc pl-5">
-                <li>Mobile App Development for iOS and Android</li>
-                <li>React Native</li>
+                <li>Mobile App Development for iOS and Android platforms</li>
                 <li>Kotlin and Swift Programming Languages</li>
-                <li>Client-Side Development Tools</li>
-                <li>Server-Side Programming Concepts</li>
+                <li>Cross-platform mobile development</li>
+                <li>Web development fundamentals (HTML5, CSS3, JavaScript)</li>
+                <li>Full stack development concepts</li>
+                <li>Mobile application strategy and business planning</li>
+                <li>App Store and Android Market submission processes</li>
+                <li>Work-integrated project</li>
               </ul>
             </div>
           </div>
