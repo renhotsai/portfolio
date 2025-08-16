@@ -35,6 +35,7 @@ interface ProjectDetail {
     networking?: string[];
     infrastructure?: string[];
     services?: string[];
+    tools?: string[];
   };
   challenges?: string[];
   learnings?: string[];
@@ -567,6 +568,18 @@ export default function ProjectDetailPage() {
                   <h4 className="font-semibold mb-2">AWS Services</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.techStack.services.map((tech) => (
+                      <Badge key={tech} variant="outline">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {project.techStack.tools && (
+                <div>
+                  <h4 className="font-semibold mb-2">Development Tools</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.techStack.tools.map((tech) => (
                       <Badge key={tech} variant="outline">
                         {tech}
                       </Badge>
