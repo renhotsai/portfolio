@@ -8,7 +8,7 @@ const skills = {
   Programming: ["JavaScript", "TypeScript", "Swift", "Kotlin", "C#", "Node.js"],
   "Web & Frontend": ["Next.js", "React", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
   "Mobile Development": ["React Native", "iOS Development", "Android Development", "Expo"],
-  "Backend & APIs": ["Express.js", "RESTful APIs", "Serverless Functions", "AWS Lambda"],
+  "Backend & APIs": ["Express.js", "Nest.js", "RESTful APIs", "Serverless Functions", "AWS Lambda"],
   "Database & Storage": ["PostgreSQL", "MongoDB", "MSSQL", "Firebase", "Amazon S3", "Amazon RDS"],
   "Cloud & DevOps": ["AWS", "Azure", "Docker", "Amazon ECS", "Amazon ECR", "CloudFront"],
   "AWS Services": ["AWS Textract", "VPC", "Route 53", "Application Load Balancer", "Auto Scaling Groups", "IAM"],
@@ -29,7 +29,7 @@ const AboutPage = () => {
             <div className="space-y-6">
               <h1 className="text-4xl font-bold text-center">About Me</h1>
               <p className="text-muted-foreground text-lg text-left">
-                Backend Engineer and Full-Stack Developer with 5+ years of coding experience, including 3+ years of professional experience in backend systems and payment processing integration. Currently pursuing advanced cloud computing studies at George Brown College. Specialized in building robust web applications, RESTful APIs, and scalable backend systems using C#, JavaScript/TypeScript, Node.js, and modern cloud technologies. Proven expertise in AWS cloud architecture, database optimization, and creating enterprise-level solutions that handle high-volume transactions.
+                Backend Engineer and Full-Stack Developer with 5+ years of coding experience, including 3+ years of professional experience in backend systems and payment processing integration. Currently pursuing advanced cloud computing studies at George Brown College. Experienced in Agile development methodologies and delivering high-quality, maintainable code. Specialized in building robust web applications, RESTful APIs, and scalable backend systems using C#, JavaScript/TypeScript, Node.js, and modern cloud technologies. Proven expertise in AWS cloud architecture, database optimization, and creating enterprise-level solutions that handle high-volume transactions.
               </p>
               <Button>Download Resume</Button>
             </div>

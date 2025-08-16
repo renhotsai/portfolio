@@ -86,6 +86,15 @@ const sampleProjects: ProjectCardProps[] = [
     liveUrl: "#",
     githubUrl: "https://github.com/renhotsai/Festival",
   },
+  {
+    id: "portfolio",
+    title: "Personal Portfolio",
+    description: "A modern, responsive portfolio website built with Next.js 15 showcasing projects, skills, and professional experience with interactive animations.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    imageUrl: "/Images/Portfolio-91ASWIBOnzkqsjBTg5zB3HSDsFUgWZ.png",
+    liveUrl: "#",
+    githubUrl: "https://github.com/renhotsai/portfolio",
+  },
 ];
 
 const ProjectsPage = () => {
