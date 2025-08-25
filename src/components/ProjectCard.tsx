@@ -1,21 +1,15 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ProjectCardProps } from "@/data/projects";
 import Link from "next/link";
 import Image from "next/image";
 
-export interface ProjectCardProps {
-  id: string;
-  title: string;
-  description: string;
-  tags: string[];
-  imageUrl: string;
-  liveUrl?: string;
-  githubUrl?: string;
+interface ExtendedProjectCardProps extends ProjectCardProps {
   isCentered?: boolean;
 }
 
-const ProjectCard = ({ id, title, description, tags, imageUrl, liveUrl, githubUrl, isCentered = false }: ProjectCardProps) => {
+const ProjectCard = ({ id, title, description, tags, imageUrl, liveUrl, githubUrl, isCentered = false }: ExtendedProjectCardProps) => {
   const cardContent = (
     <>
       <CardHeader>
@@ -37,15 +31,9 @@ const ProjectCard = ({ id, title, description, tags, imageUrl, liveUrl, githubUr
 
   return (
     <Card className="flex flex-col h-full transition-transform duration-300 ease-in-out hover:scale-105">
-      {isCentered ? (
-        <Link href={`/projects/${id}`} className="flex flex-col h-full">
-          {cardContent}
-        </Link>
-      ) : (
-        <div className="flex flex-col h-full">
-          {cardContent}
-        </div>
-      )}
+      <Link href={`/projects/${id}`} className="flex flex-col flex-grow">
+        {cardContent}
+      </Link>
       <CardFooter className="flex justify-end gap-4">
         {githubUrl && (
           <Link href={githubUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
