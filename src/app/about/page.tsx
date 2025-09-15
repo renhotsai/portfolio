@@ -1,11 +1,11 @@
 "use client";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import AboutHero from "@/components/AboutHero";
 import Link from "next/link";
 import { useState } from "react";
 import { skills } from "@/data/skills";
@@ -20,43 +20,68 @@ import { education } from "@/data/education";
 
 const AboutPage = () => {
 	const [selectedCertificate, setSelectedCertificate] = useState(certificates[0]);
+
 	return (
 		<div className="container py-12 md:py-16">
 			<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
 				{/* Left Side - Hero Section */}
 				<div className="lg:col-span-4">
-					<div className="flex flex-col items-center lg:sticky lg:top-8 space-y-8">
-						<Avatar className="w-56 h-56">
-							<AvatarImage src="/Images/Jeremy-WFcyBsvIZyLUozH4k7MON7w2tFfIbj.jpg" alt="Jeremy"
-							             className="object-cover scale-150 object-top"/>
-							<AvatarFallback>JT</AvatarFallback>
-						</Avatar>
-						<div className="space-y-6">
-							<h1 className="text-4xl font-bold text-center">About Me</h1>
-							<p className="text-muted-foreground text-lg text-left">
-								Backend Engineer and Full-Stack Developer with 5+ years of coding experience, including 3+ years of
-								professional experience in backend systems and payment processing integration. Currently pursuing
-								advanced cloud computing studies at George Brown College. Experienced in Agile development methodologies
-								and delivering high-quality, maintainable code. Specialized in building robust web applications, RESTful
-								APIs, and scalable backend systems using C#, JavaScript/TypeScript, Node.js, and modern cloud
-								technologies. Proven expertise in AWS cloud architecture, database optimization, and creating
-								enterprise-level solutions that handle high-volume transactions.
-							</p>
-							<Link href="/JeremyTsai-2025.pdf" target="_blank" rel="noopener noreferrer">
-								<Button>Download Resume</Button>
-							</Link>
-						</div>
+					<div className="lg:sticky lg:top-8">
+						<AboutHero />
 					</div>
 				</div>
 
-				{/* Right Side - Tabs Section */}
+				{/* Right Side - Desktop Tabs / Mobile Overview */}
 				<div className="lg:col-span-8">
-					<Tabs defaultValue="skills" className="w-full">
-						<TabsList className="grid w-full grid-cols-4">
-							<TabsTrigger value="skills">Skills</TabsTrigger>
-							<TabsTrigger value="experience">Experience</TabsTrigger>
-							<TabsTrigger value="education">Education</TabsTrigger>
-							<TabsTrigger value="certificates">Certificates</TabsTrigger>
+					{/* Mobile: Simple overview with navigation hints */}
+					<div className="md:hidden">
+						<div className="space-y-6">
+							<div>
+								<h2 className="text-xl font-semibold mb-4">Explore My Background</h2>
+								<p className="text-muted-foreground mb-6">
+									Use the menu above to navigate through different sections of my professional profile.
+								</p>
+							</div>
+							<div className="grid grid-cols-2 gap-4">
+								<Link
+									href="/about/skills"
+									className="p-4 border rounded-lg hover:shadow-md transition-all"
+								>
+									<h3 className="font-medium mb-2">Skills</h3>
+									<p className="text-sm text-muted-foreground">Technical expertise</p>
+								</Link>
+								<Link
+									href="/about/experience"
+									className="p-4 border rounded-lg hover:shadow-md transition-all"
+								>
+									<h3 className="font-medium mb-2">Experience</h3>
+									<p className="text-sm text-muted-foreground">Work history</p>
+								</Link>
+								<Link
+									href="/about/education"
+									className="p-4 border rounded-lg hover:shadow-md transition-all"
+								>
+									<h3 className="font-medium mb-2">Education</h3>
+									<p className="text-sm text-muted-foreground">Academic background</p>
+								</Link>
+								<Link
+									href="/about/certificates"
+									className="p-4 border rounded-lg hover:shadow-md transition-all"
+								>
+									<h3 className="font-medium mb-2">Certificates</h3>
+									<p className="text-sm text-muted-foreground">Certifications</p>
+								</Link>
+							</div>
+						</div>
+					</div>
+
+					{/* Desktop: Full Tab Interface */}
+					<Tabs defaultValue="skills" className="w-full hidden md:block">
+						<TabsList className="grid w-full grid-cols-4 gap-1">
+							<TabsTrigger value="skills" className="text-sm">Skills</TabsTrigger>
+							<TabsTrigger value="experience" className="text-sm">Experience</TabsTrigger>
+							<TabsTrigger value="education" className="text-sm">Education</TabsTrigger>
+							<TabsTrigger value="certificates" className="text-sm">Certificates</TabsTrigger>
 						</TabsList>
 
 						<TabsContent value="skills" className="mt-8">
@@ -124,34 +149,76 @@ const AboutPage = () => {
 						</TabsContent>
 
 						<TabsContent value="certificates" className="mt-8">
-							<Card className="transition-all duration-300 hover:shadow-lg h-[700px]">
-								<CardContent className="p-0 h-full">
-									<div className="grid grid-cols-1 lg:grid-cols-4 h-full">
-										{/* Left Side - Certificate Display */}
-										<div className="lg:col-span-3 order-2 lg:order-1 p-6 border-b lg:border-b-0 lg:border-r">
-											<div className="h-full flex flex-col">
-												<div className="mb-4">
+							<Card className="transition-all duration-300 hover:shadow-lg">
+								<CardContent className="p-0">
+									<div className="grid grid-cols-1 lg:grid-cols-4">
+										{/* Mobile/Desktop Certificate Display */}
+										<div className="lg:col-span-3 order-2 lg:order-1 p-4 md:p-6 border-b lg:border-b-0 lg:border-r">
+											<div className="space-y-4">
+												<div>
 													<h3 className="text-lg font-semibold">{selectedCertificate.title}</h3>
 													<p className="text-muted-foreground text-sm">{selectedCertificate.description}</p>
 												</div>
-												<div className="flex-1">
+
+												{/* Desktop PDF Viewer */}
+												<div className="hidden lg:block">
 													<iframe
 														src={selectedCertificate.pdfUrl}
-														className="w-full h-full border rounded-lg"
+														className="w-full h-[500px] border rounded-lg"
 														title={selectedCertificate.title}
 													/>
+												</div>
+
+												{/* Mobile-friendly Download Link */}
+												<div className="lg:hidden">
+													<div className="bg-muted rounded-lg p-6 text-center space-y-4">
+														<div className="text-6xl">📜</div>
+														<div>
+															<h4 className="font-medium mb-2">Certificate Document</h4>
+															<p className="text-sm text-muted-foreground mb-4">
+																Tap the button below to view or download the certificate
+															</p>
+															<Link href={selectedCertificate.pdfUrl} target="_blank" rel="noopener noreferrer">
+																<Button className="w-full">
+																	View Certificate
+																</Button>
+															</Link>
+														</div>
+													</div>
 												</div>
 											</div>
 										</div>
 
-										{/* Right Side - Certificate List */}
-										<div className="lg:col-span-1 order-1 lg:order-2 p-6">
-											<div className="h-full flex flex-col">
-												<div className="mb-4">
-													<h3 className="text-lg font-semibold">Certificates</h3>
+										{/* Certificate List */}
+										<div className="lg:col-span-1 order-1 lg:order-2 p-4 md:p-6">
+											<div className="space-y-4">
+												<h3 className="text-lg font-semibold">Certificates</h3>
+
+												{/* Mobile: Horizontal Scroll */}
+												<div className="lg:hidden">
+													<div className="flex gap-2 overflow-x-auto pb-2">
+														{certificates.map((cert) => (
+															<button
+																key={cert.id}
+																onClick={() => setSelectedCertificate(cert)}
+																className={`flex-shrink-0 p-3 rounded-lg border-2 transition-all duration-200 min-w-[200px] text-left ${
+																	selectedCertificate.id === cert.id
+																		? "border-primary bg-primary/10"
+																		: "border-border hover:border-primary/50"
+																}`}
+															>
+																<div className="font-medium text-sm">{cert.title}</div>
+																<div className="text-xs text-muted-foreground mt-1 line-clamp-2">
+																	{cert.description}
+																</div>
+															</button>
+														))}
+													</div>
 												</div>
-												<div className="flex-1">
-													<ScrollArea className="h-full">
+
+												{/* Desktop: Vertical List */}
+												<div className="hidden lg:block">
+													<ScrollArea className="h-[500px]">
 														<div className="space-y-1 pr-1">
 															{certificates.map((cert) => (
 																<button

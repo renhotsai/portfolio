@@ -36,16 +36,16 @@ const ProjectsPage = () => {
   };
 
   return (
-    <div className="container py-8">
+    <div className="container py-6 md:py-8">
       <MotionWrap>
-        <h1 className="text-4xl font-bold mb-2">My Projects</h1>
-        <p className="text-lg text-muted-foreground mb-8">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">My Projects</h1>
+        <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
           A showcase of my development work including mobile apps, web applications, and full-stack projects.
         </p>
       </MotionWrap>
       
-      {/* 3x3 Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+      {/* Grid Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
         {currentProjects.map((project, index) => (
           <MotionWrap key={project.id} delay={index * 0.1}>
             <ProjectCard {...project} />
@@ -55,11 +55,11 @@ const ProjectsPage = () => {
 
       {/* Show pagination only if there are multiple pages */}
       {totalPages > 1 && (
-        <div className="flex justify-center">
+        <div className="flex justify-center px-4">
           <Pagination>
-            <PaginationContent>
+            <PaginationContent className="flex-wrap gap-1">
               <PaginationItem>
-                <PaginationPrevious 
+                <PaginationPrevious
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
@@ -67,10 +67,10 @@ const ProjectsPage = () => {
                       handlePageChange(currentPage - 1);
                     }
                   }}
-                  className={currentPage === 1 ? "pointer-events-none opacity-50" : ""}
+                  className={`min-h-[44px] ${currentPage === 1 ? "pointer-events-none opacity-50" : ""}`}
                 />
               </PaginationItem>
-              
+
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                 <PaginationItem key={page}>
                   <PaginationLink
@@ -80,14 +80,15 @@ const ProjectsPage = () => {
                       handlePageChange(page);
                     }}
                     isActive={currentPage === page}
+                    className="min-h-[44px] min-w-[44px]"
                   >
                     {page}
                   </PaginationLink>
                 </PaginationItem>
               ))}
-              
+
               <PaginationItem>
-                <PaginationNext 
+                <PaginationNext
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
@@ -95,7 +96,7 @@ const ProjectsPage = () => {
                       handlePageChange(currentPage + 1);
                     }
                   }}
-                  className={currentPage === totalPages ? "pointer-events-none opacity-50" : ""}
+                  className={`min-h-[44px] ${currentPage === totalPages ? "pointer-events-none opacity-50" : ""}`}
                 />
               </PaginationItem>
             </PaginationContent>
