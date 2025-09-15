@@ -20,15 +20,15 @@ const SkillsPage = () => {
 					<MobileBreadcrumb currentPage="Skills" />
 
 					{/* Mobile Hero (condensed) */}
-					<div className="lg:hidden mb-8">
-						<h1 className="text-2xl font-bold mb-4">Skills</h1>
-						<p className="text-muted-foreground">
+					<div className="lg:hidden mb-6">
+						<h1 className="text-xl font-bold mb-3">Skills</h1>
+						<p className="text-muted-foreground text-sm">
 							Technical skills and expertise I&apos;ve developed throughout my career.
 						</p>
 					</div>
 
 					{/* Skills Grid */}
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
 						{Object.entries(skills).map(([category, items]) => (
 							<Card key={category} className="transition-all duration-300 hover:shadow-lg">
 								<CardHeader className="pb-3">
