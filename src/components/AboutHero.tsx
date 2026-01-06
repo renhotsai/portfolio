@@ -21,7 +21,7 @@ const AboutHero = () => {
 					technologies. Proven expertise in AWS cloud architecture, database optimization, and creating
 					enterprise-level solutions that handle high-volume transactions.
 				</p>
-				<Link href="/JeremyTsai-2025.pdf" target="_blank" rel="noopener noreferrer">
+				<Link href="/resume/JeremyTsai-2025.pdf" target="_blank" rel="noopener noreferrer">
 					<Button>Download Resume</Button>
 				</Link>
 			</div>
