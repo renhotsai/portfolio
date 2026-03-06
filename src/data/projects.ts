@@ -30,40 +30,46 @@ export interface ProjectDetail extends ProjectCardProps {
 export const projectsData: Record<string, ProjectDetail> = {
   "fly-panner": {
     id: "fly-panner",
-    title: "Fly Panner - Flight Search Tool",
-    description: "A flight search tool that finds the cheapest flights across flexible date ranges by concurrently checking every departure and return date combination using the Amadeus Self-Service API.",
-    longDescription: "Fly Panner is a smart flight search application designed to help travelers find the best deals by scanning all valid combinations of departure and return dates within a flexible date window simultaneously. Powered by the Amadeus Self-Service API, the app surfaces competitive pricing at a glance without the need to manually check individual dates. It supports both one-way and round-trip searches, intelligently caps concurrent API calls to six to respect rate limits, and limits searches to 100 date combinations for optimal performance. Results can be sorted by price, departure date, duration, or number of stops, and exported to CSV for offline review.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Amadeus API", "Flight Search"],
+    title: "Fly Panner - Flexible Flight Search & Price Alert",
+    description: "Born from a personal frustration of manually checking flight prices day after day, Fly Panner lets you define a flexible date range and instantly scans every date combination — built AI-first with Claude Code, powered by Amadeus API, Resend email alerts, and a database-backed subscription system.",
+    longDescription: "Fly Panner started from a real problem: I was planning a trip and needed to find the cheapest flights, but manually browsing each date one by one was exhausting — and coming back every day to re-check was even worse. I wanted a smarter way: set a departure and return date range, fire off all combinations at once, and get results ranked by price immediately.\n\nThis project was built AI-first using Claude Code, which significantly accelerated architecture decisions, API integration patterns, and the subscription email pipeline design. The app is built on Next.js 14 with the App Router, integrates the Amadeus Self-Service API for real-time flight pricing, and uses a database to persist user subscriptions. Once subscribed, Resend delivers styled price alert emails automatically — so you set your route and dates once and let the app do the daily monitoring for you.\n\nThe backend intelligently manages concurrency: up to 6 parallel Amadeus API requests at a time, capped at 100 date combinations per search to stay within free-tier rate limits. Results are sortable by price, duration, departure date, or stops, and can be exported to CSV for offline comparison.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Amadeus API", "Resend", "Database", "Claude Code", "AI-Assisted"],
     imageUrl: "",
     liveUrl: "https://fly-panner-g0kri35mh-jeremys-projects-12e3ce68.vercel.app",
     githubUrl: "https://github.com/renhotsai/fly-panner",
     features: [
-      "Flexible date window search that tests all valid departure and return date combinations concurrently",
-      "Support for both one-way and round-trip itineraries",
+      "Flexible date range search — scans all valid departure and return date combinations concurrently",
+      "Email subscription system — subscribe once and receive automated price alerts via Resend",
+      "Database-backed subscription storage for persistent price monitoring across sessions",
+      "One-way and round-trip itinerary support",
       "Results sortable by price, departure date, flight duration, or number of stops",
-      "CSV export functionality for offline review and comparison",
-      "Intelligent rate limiting with max 6 concurrent API requests",
-      "Search capped at 100 date combinations for performance",
-      "Amadeus Self-Service API integration for real-time flight pricing",
-      "Free operational tier available for general use"
+      "CSV export for offline flight comparison and analysis",
+      "Concurrent request management: max 6 parallel Amadeus API calls, capped at 100 combinations",
+      "Real-time flight pricing via Amadeus Self-Service API",
+      "Built AI-first using Claude Code for accelerated development and architecture design"
     ],
     techStack: {
       frontend: ["Next.js 14", "TypeScript", "Tailwind CSS", "App Router"],
-      services: ["Amadeus Self-Service API"],
+      backend: ["Next.js API Routes", "Amadeus Self-Service API"],
+      database: ["Database (subscription persistence)"],
+      services: ["Amadeus Self-Service API", "Resend (email price alerts)", "Claude Code (AI-assisted development)"],
       tools: ["Git", "npm", "Vercel"]
     },
     challenges: [
-      "Managing concurrent API requests while respecting Amadeus rate limits (~10 req/s)",
-      "Designing an efficient algorithm to enumerate and dispatch all date combinations simultaneously",
-      "Implementing graceful degradation and error handling for partial API failures",
-      "Optimizing performance for large flexible date ranges without overwhelming the free tier"
+      "Managing concurrent Amadeus API requests within the free-tier rate limit (~10 req/s) without hitting throttling errors",
+      "Designing the subscription pipeline: storing user preferences in a database, triggering checks, and delivering Resend emails reliably",
+      "Enumerating all date combinations efficiently and dispatching them in parallel without overwhelming the API",
+      "Handling partial API failures gracefully so a few failed combinations don't break the full result set",
+      "Leveraging Claude Code as an AI development partner to accelerate decisions on API design, data flow, and email templating"
     ],
     learnings: [
-      "Amadeus Self-Service API integration and OAuth authentication flow",
-      "Concurrent request management and rate-limit strategies in Next.js",
-      "Flexible date-range search UX patterns for travel applications",
-      "CSV generation on the client side for data export",
-      "Deploying Next.js applications to Vercel with environment variable management"
+      "Amadeus Self-Service API — OAuth 2.0 authentication and flight offers search endpoint usage",
+      "End-to-end email subscription flow: database persistence → scheduled trigger → Resend delivery",
+      "AI-first development workflow with Claude Code — architecture, integration patterns, and rapid prototyping",
+      "Concurrent request management and rate-limiting strategies in Next.js API routes",
+      "Flexible date-range UX design patterns for travel and price-comparison applications",
+      "Client-side CSV generation for data export without a dedicated backend endpoint",
+      "Deploying Next.js applications to Vercel with secure environment variable management"
     ]
   },
   "car-rent": {
