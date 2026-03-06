@@ -30,46 +30,49 @@ export interface ProjectDetail extends ProjectCardProps {
 export const projectsData: Record<string, ProjectDetail> = {
   "fly-panner": {
     id: "fly-panner",
-    title: "Fly Panner - Flexible Flight Search & Price Alert",
-    description: "Born from a personal frustration of manually checking flight prices day after day, Fly Panner lets you define a flexible date range and instantly scans every date combination — built AI-first with Claude Code, powered by Amadeus API, Resend email alerts, and a database-backed subscription system.",
-    longDescription: "Fly Panner started from a real problem: I was planning a trip and needed to find the cheapest flights, but manually browsing each date one by one was exhausting — and coming back every day to re-check was even worse. I wanted a smarter way: set a departure and return date range, fire off all combinations at once, and get results ranked by price immediately.\n\nThis project was built AI-first using Claude Code, which significantly accelerated architecture decisions, API integration patterns, and the subscription email pipeline design. The app is built on Next.js 14 with the App Router, integrates the Amadeus Self-Service API for real-time flight pricing, and uses a database to persist user subscriptions. Once subscribed, Resend delivers styled price alert emails automatically — so you set your route and dates once and let the app do the daily monitoring for you.\n\nThe backend intelligently manages concurrency: up to 6 parallel Amadeus API requests at a time, capped at 100 date combinations per search to stay within free-tier rate limits. Results are sortable by price, duration, departure date, or stops, and can be exported to CSV for offline comparison.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Amadeus API", "Resend", "Database", "Claude Code", "AI-Assisted"],
+    title: "Fly Panner - Flexible Flight Search & Weekly Price Alerts",
+    description: "Born from a personal frustration of manually checking flight prices day after day, Fly Panner lets you define a flexible date range, instantly scans every date combination via Duffel Air API, and subscribes you to weekly email alerts — built AI-first with Claude Code, backed by PostgreSQL and Resend.",
+    longDescription: "Fly Panner started from a real problem: I was planning a trip and needed to find the cheapest flights, but manually browsing each date one by one was exhausting — and coming back every day to re-check was even worse. I wanted a smarter way: set a departure and return date range, fire off all combinations at once, and get results ranked by price immediately. And when I found a good route, I didn't want to keep checking — I wanted it to just tell me every week.\n\nThis project was built AI-first using Claude Code, which accelerated architecture decisions, API design, database schema, and the email pipeline. The app is built on Next.js 14 (App Router) with TypeScript, uses the Duffel Air API for real-time flight pricing, and Prisma with Neon PostgreSQL to persist subscriptions. Every Monday, a Vercel cron job triggers the alert pipeline — Resend delivers styled weekly digest emails to all active subscribers, each containing a secure one-click unsubscribe link.\n\nThe search engine scans up to 50 date combinations concurrently, with results filterable to direct-only flights and sortable by price, departure date, duration, or stops. Results can also be exported to CSV for offline analysis.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Duffel Air API", "Prisma", "PostgreSQL", "Resend", "Claude Code", "AI-Assisted"],
     imageUrl: "",
     liveUrl: "https://fly-panner-g0kri35mh-jeremys-projects-12e3ce68.vercel.app",
     githubUrl: "https://github.com/renhotsai/fly-panner",
     features: [
-      "Flexible date range search — scans all valid departure and return date combinations concurrently",
-      "Email subscription system — subscribe once and receive automated price alerts via Resend",
-      "Database-backed subscription storage for persistent price monitoring across sessions",
+      "Flexible date range search — scans up to 50 departure and return date combinations concurrently",
+      "Weekly email price alerts — subscribe once, receive best fares every Monday via Resend",
+      "One-click secure unsubscribe link included in every alert email",
+      "PostgreSQL (Neon serverless) + Prisma ORM for subscription persistence",
+      "Vercel cron job triggers weekly alert pipeline automatically (Mondays at midnight UTC)",
+      "Direct-only flight filter to show non-stop results exclusively",
       "One-way and round-trip itinerary support",
       "Results sortable by price, departure date, flight duration, or number of stops",
+      "Airport autocomplete search for easy origin and destination input",
       "CSV export for offline flight comparison and analysis",
-      "Concurrent request management: max 6 parallel Amadeus API calls, capped at 100 combinations",
-      "Real-time flight pricing via Amadeus Self-Service API",
-      "Built AI-first using Claude Code for accelerated development and architecture design"
+      "Built AI-first using Claude Code for architecture, API integration, and email pipeline design"
     ],
     techStack: {
       frontend: ["Next.js 14", "TypeScript", "Tailwind CSS", "App Router"],
-      backend: ["Next.js API Routes", "Amadeus Self-Service API"],
-      database: ["Database (subscription persistence)"],
-      services: ["Amadeus Self-Service API", "Resend (email price alerts)", "Claude Code (AI-assisted development)"],
+      backend: ["Next.js API Routes", "Duffel Air API", "Vercel Cron Jobs"],
+      database: ["PostgreSQL (Neon Serverless)", "Prisma 5 ORM"],
+      services: ["Duffel Air API (flight data)", "Resend (weekly email alerts)", "Claude Code (AI-assisted development)"],
       tools: ["Git", "npm", "Vercel"]
     },
     challenges: [
-      "Managing concurrent Amadeus API requests within the free-tier rate limit (~10 req/s) without hitting throttling errors",
-      "Designing the subscription pipeline: storing user preferences in a database, triggering checks, and delivering Resend emails reliably",
-      "Enumerating all date combinations efficiently and dispatching them in parallel without overwhelming the API",
-      "Handling partial API failures gracefully so a few failed combinations don't break the full result set",
-      "Leveraging Claude Code as an AI development partner to accelerate decisions on API design, data flow, and email templating"
+      "Migrating from Amadeus to Duffel Air API — adapting to a new authentication model and flight offer response schema",
+      "Designing the weekly cron pipeline: Vercel cron → fetch best fares per subscription → batch Resend email delivery",
+      "Generating secure, token-based one-click unsubscribe links without exposing user data",
+      "Managing up to 50 concurrent Duffel API requests per search while keeping latency acceptable",
+      "Setting up Prisma with Neon serverless PostgreSQL for both pooled and direct connections on Vercel",
+      "Leveraging Claude Code to accelerate database schema design, API route architecture, and email template creation"
     ],
     learnings: [
-      "Amadeus Self-Service API — OAuth 2.0 authentication and flight offers search endpoint usage",
-      "End-to-end email subscription flow: database persistence → scheduled trigger → Resend delivery",
-      "AI-first development workflow with Claude Code — architecture, integration patterns, and rapid prototyping",
-      "Concurrent request management and rate-limiting strategies in Next.js API routes",
-      "Flexible date-range UX design patterns for travel and price-comparison applications",
-      "Client-side CSV generation for data export without a dedicated backend endpoint",
-      "Deploying Next.js applications to Vercel with secure environment variable management"
+      "Duffel Air API — authentication, flight search endpoints, and offer response parsing",
+      "Prisma 5 ORM with Neon serverless PostgreSQL — schema design, migrations, and connection pooling on Vercel",
+      "End-to-end subscription pipeline: database storage → Vercel cron trigger → Resend batch email delivery",
+      "Secure unsubscribe token generation and validation in a serverless environment",
+      "AI-first development workflow with Claude Code — rapid prototyping, API integration, and pipeline design",
+      "Vercel cron job configuration and deployment with protected secret headers",
+      "Client-side CSV generation for data export without a dedicated backend endpoint"
     ]
   },
   "car-rent": {
