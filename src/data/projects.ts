@@ -28,6 +28,44 @@ export interface ProjectDetail extends ProjectCardProps {
 
 
 export const projectsData: Record<string, ProjectDetail> = {
+  "fly-panner": {
+    id: "fly-panner",
+    title: "Fly Panner - Flight Search Tool",
+    description: "A flight search tool that finds the cheapest flights across flexible date ranges by concurrently checking every departure and return date combination using the Amadeus Self-Service API.",
+    longDescription: "Fly Panner is a smart flight search application designed to help travelers find the best deals by scanning all valid combinations of departure and return dates within a flexible date window simultaneously. Powered by the Amadeus Self-Service API, the app surfaces competitive pricing at a glance without the need to manually check individual dates. It supports both one-way and round-trip searches, intelligently caps concurrent API calls to six to respect rate limits, and limits searches to 100 date combinations for optimal performance. Results can be sorted by price, departure date, duration, or number of stops, and exported to CSV for offline review.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Amadeus API", "Flight Search"],
+    imageUrl: "",
+    liveUrl: "https://fly-panner-g0kri35mh-jeremys-projects-12e3ce68.vercel.app",
+    githubUrl: "https://github.com/renhotsai/fly-panner",
+    features: [
+      "Flexible date window search that tests all valid departure and return date combinations concurrently",
+      "Support for both one-way and round-trip itineraries",
+      "Results sortable by price, departure date, flight duration, or number of stops",
+      "CSV export functionality for offline review and comparison",
+      "Intelligent rate limiting with max 6 concurrent API requests",
+      "Search capped at 100 date combinations for performance",
+      "Amadeus Self-Service API integration for real-time flight pricing",
+      "Free operational tier available for general use"
+    ],
+    techStack: {
+      frontend: ["Next.js 14", "TypeScript", "Tailwind CSS", "App Router"],
+      services: ["Amadeus Self-Service API"],
+      tools: ["Git", "npm", "Vercel"]
+    },
+    challenges: [
+      "Managing concurrent API requests while respecting Amadeus rate limits (~10 req/s)",
+      "Designing an efficient algorithm to enumerate and dispatch all date combinations simultaneously",
+      "Implementing graceful degradation and error handling for partial API failures",
+      "Optimizing performance for large flexible date ranges without overwhelming the free tier"
+    ],
+    learnings: [
+      "Amadeus Self-Service API integration and OAuth authentication flow",
+      "Concurrent request management and rate-limit strategies in Next.js",
+      "Flexible date-range search UX patterns for travel applications",
+      "CSV generation on the client side for data export",
+      "Deploying Next.js applications to Vercel with environment variable management"
+    ]
+  },
   "car-rent": {
     id: "car-rent",
     title: "RentEV - Electric Vehicle Rental Platform",
