@@ -23,8 +23,8 @@ export default function Home() {
           delay={0.2}
           className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed px-2"
         >
-          I design and ship production-ready applications end-to-end — from scalable <span className="text-foreground font-medium">API backends</span> and <span className="text-foreground font-medium">relational database schemas</span> to <span className="text-foreground font-medium">LLM-integrated features</span> and <span className="text-foreground font-medium">AI coding workflows</span>.
-          With hands-on experience in <span className="text-foreground font-medium">system architecture design</span>, <span className="text-foreground font-medium">AWS cloud deployment</span>, and modern full-stack development, I help teams move fast without sacrificing reliability or maintainability.
+          Proficient in designing <span className="text-foreground font-medium">end-to-end application architecture</span> — spanning scalable <span className="text-foreground font-medium">API backends</span>, <span className="text-foreground font-medium">relational database schemas</span>, and <span className="text-foreground font-medium">cloud infrastructure on AWS</span>.
+          Experienced in integrating <span className="text-foreground font-medium">LLMs and AI coding workflows</span> into production systems, with a strong foundation in <span className="text-foreground font-medium">system design</span> and modern full-stack development.
         </MotionWrap>
         <MotionWrap delay={0.25} className="mb-8 md:mb-12">
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 md:gap-6 text-sm md:text-base">
