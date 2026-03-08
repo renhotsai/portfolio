@@ -28,6 +28,53 @@ export interface ProjectDetail extends ProjectCardProps {
 
 
 export const projectsData: Record<string, ProjectDetail> = {
+  "fly-panner": {
+    id: "fly-panner",
+    title: "Fly Panner - Flexible Flight Search & Weekly Price Alerts",
+    description: "Born from a personal frustration of manually checking flight prices day after day, Fly Panner lets you define a flexible date range, instantly scans every date combination via Duffel Air API, and subscribes you to weekly email alerts — built AI-first with Claude Code, backed by PostgreSQL and Resend.",
+    longDescription: "Fly Panner started from a real problem: I was planning a trip and needed to find the cheapest flights, but manually browsing each date one by one was exhausting — and coming back every day to re-check was even worse. I wanted a smarter way: set a departure and return date range, fire off all combinations at once, and get results ranked by price immediately. And when I found a good route, I didn't want to keep checking — I wanted it to just tell me every week.\n\nThis project was built AI-first using Claude Code, which accelerated architecture decisions, API design, database schema, and the email pipeline. The app is built on Next.js 14 (App Router) with TypeScript, uses the Duffel Air API for real-time flight pricing, and Prisma with Neon PostgreSQL to persist subscriptions. Every Monday, a Vercel cron job triggers the alert pipeline — Resend delivers styled weekly digest emails to all active subscribers, each containing a secure one-click unsubscribe link.\n\nThe search engine scans up to 50 date combinations concurrently, with results filterable to direct-only flights and sortable by price, departure date, duration, or stops. Results can also be exported to CSV for offline analysis.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Duffel Air API", "Prisma", "PostgreSQL", "Resend", "Claude Code", "AI-Assisted"],
+    imageUrl: "",
+    liveUrl: "https://fly-panner-g0kri35mh-jeremys-projects-12e3ce68.vercel.app",
+    githubUrl: "https://github.com/renhotsai/fly-panner",
+    features: [
+      "Flexible date range search — scans up to 50 departure and return date combinations concurrently",
+      "Weekly email price alerts — subscribe once, receive best fares every Monday via Resend",
+      "One-click secure unsubscribe link included in every alert email",
+      "PostgreSQL (Neon serverless) + Prisma ORM for subscription persistence",
+      "Vercel cron job triggers weekly alert pipeline automatically (Mondays at midnight UTC)",
+      "Direct-only flight filter to show non-stop results exclusively",
+      "One-way and round-trip itinerary support",
+      "Results sortable by price, departure date, flight duration, or number of stops",
+      "Airport autocomplete search for easy origin and destination input",
+      "CSV export for offline flight comparison and analysis",
+      "Built AI-first using Claude Code for architecture, API integration, and email pipeline design"
+    ],
+    techStack: {
+      frontend: ["Next.js 14", "TypeScript", "Tailwind CSS", "App Router"],
+      backend: ["Next.js API Routes", "Duffel Air API", "Vercel Cron Jobs"],
+      database: ["PostgreSQL (Neon Serverless)", "Prisma 5 ORM"],
+      services: ["Duffel Air API (flight data)", "Resend (weekly email alerts)", "Claude Code (AI-assisted development)"],
+      tools: ["Git", "npm", "Vercel"]
+    },
+    challenges: [
+      "Migrating from Amadeus to Duffel Air API — adapting to a new authentication model and flight offer response schema",
+      "Designing the weekly cron pipeline: Vercel cron → fetch best fares per subscription → batch Resend email delivery",
+      "Generating secure, token-based one-click unsubscribe links without exposing user data",
+      "Managing up to 50 concurrent Duffel API requests per search while keeping latency acceptable",
+      "Setting up Prisma with Neon serverless PostgreSQL for both pooled and direct connections on Vercel",
+      "Leveraging Claude Code to accelerate database schema design, API route architecture, and email template creation"
+    ],
+    learnings: [
+      "Duffel Air API — authentication, flight search endpoints, and offer response parsing",
+      "Prisma 5 ORM with Neon serverless PostgreSQL — schema design, migrations, and connection pooling on Vercel",
+      "End-to-end subscription pipeline: database storage → Vercel cron trigger → Resend batch email delivery",
+      "Secure unsubscribe token generation and validation in a serverless environment",
+      "AI-first development workflow with Claude Code — rapid prototyping, API integration, and pipeline design",
+      "Vercel cron job configuration and deployment with protected secret headers",
+      "Client-side CSV generation for data export without a dedicated backend endpoint"
+    ]
+  },
   "car-rent": {
     id: "car-rent",
     title: "RentEV - Electric Vehicle Rental Platform",
