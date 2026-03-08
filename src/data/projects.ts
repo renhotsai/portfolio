@@ -481,7 +481,6 @@ export const projectsData: Record<string, ProjectDetail> = {
         description: "AI-powered resume parsing with AWS Textract integration and document storage in Amazon S3"
       }
     ],
-    liveUrl: "https://acemycareer.online/",
     githubUrl: "https://github.com/renhotsai/job-search",
     features: [
       "Advanced job search with filters",
