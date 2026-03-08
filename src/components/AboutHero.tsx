@@ -13,13 +13,12 @@ const AboutHero = () => {
 			<div className="space-y-4 md:space-y-6 text-center">
 				<h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">About Me</h1>
 				<p className="text-muted-foreground text-base md:text-lg max-w-2xl">
-					Backend Engineer and Full-Stack Developer with 5+ years of coding experience, including 3+ years of
-					professional experience in backend systems and payment processing integration. Currently pursuing
-					advanced cloud computing studies at George Brown College. Experienced in Agile development methodologies
-					and delivering high-quality, maintainable code. Specialized in building robust web applications, RESTful
-					APIs, and scalable backend systems using C#, JavaScript/TypeScript, Node.js, and modern cloud
-					technologies. Proven expertise in AWS cloud architecture, database optimization, and creating
-					enterprise-level solutions that handle high-volume transactions.
+					Full-Stack Engineer with 5+ years of experience, including 3+ years in professional backend and payment
+					system development. Skilled in end-to-end application architecture — from RESTful API design and
+					relational database schema planning to AWS cloud infrastructure. Proficient in AI-assisted development
+					using tools like Claude and Cursor, and experienced in integrating LLM APIs into production applications.
+					Grounded in TypeScript, Node.js, C#, and modern full-stack technologies, with ongoing cloud computing
+					studies at George Brown College.
 				</p>
 				<Link href="/resume/JeremyTsai-2025.pdf" target="_blank" rel="noopener noreferrer">
 					<Button>Download Resume</Button>

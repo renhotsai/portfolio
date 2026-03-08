@@ -6,5 +6,6 @@ export const skills = {
 	"Database & Storage": ["PostgreSQL", "MongoDB", "MSSQL", "Firebase", "Amazon S3", "Amazon RDS"],
 	"Cloud & DevOps": ["AWS", "Azure", "Docker", "Amazon ECS", "Amazon ECR", "CloudFront"],
 	"AWS Services": ["AWS Textract", "VPC", "Route 53", "Application Load Balancer", "Auto Scaling Groups", "IAM"],
+	"AI & LLM": ["Claude API", "OpenAI API", "LLM Integration", "Cursor", "Prompt Engineering", "AI-Assisted Development"],
 	"Development Tools": ["Git", "VS Code", "Xcode", "Android Studio", "Expo CLI", "npm"]
 };
