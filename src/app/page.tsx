@@ -17,8 +17,8 @@ export default function Home() {
           delay={0.2}
           className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed px-2"
         >
-          I build robust backend systems and modern web applications that power real businesses. Specializing in <span className="text-foreground font-medium">RESTful APIs</span>, <span className="text-foreground font-medium">database optimization</span>, and <span className="text-foreground font-medium">AWS cloud architecture</span>.
-          From payment processing systems to scalable web platforms, I create reliable solutions that handle high-volume transactions.
+          I build robust backend systems and modern web applications that power real businesses. Specializing in <span className="text-foreground font-medium">RESTful APIs</span>, <span className="text-foreground font-medium">database design & optimization</span>, <span className="text-foreground font-medium">AWS cloud architecture</span>, and <span className="text-foreground font-medium">AI-powered application development</span>.
+          From payment processing systems to scalable web platforms, I design end-to-end application architectures — integrating AI coding workflows and data-driven solutions that handle high-volume transactions.
         </MotionWrap>
         <MotionWrap delay={0.25} className="mb-8 md:mb-12">
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 md:gap-6 text-sm md:text-base">
@@ -32,7 +32,7 @@ export default function Home() {
             </div>
             <div className="flex items-center justify-center gap-2">
               <span className="w-2 h-2 bg-purple-500 rounded-full flex-shrink-0"></span>
-              <span>Backend & Web Expert</span>
+              <span>AI & Full-Stack Expert</span>
             </div>
           </div>
         </MotionWrap>
