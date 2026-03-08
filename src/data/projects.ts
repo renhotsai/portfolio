@@ -28,6 +28,50 @@ export interface ProjectDetail extends ProjectCardProps {
 
 
 export const projectsData: Record<string, ProjectDetail> = {
+  "fly-panner": {
+    id: "fly-panner",
+    title: "Fly Planner - Flight Deal Finder",
+    description: "A full-stack web app that fans out requests across flexible date ranges to find the cheapest flights, featuring concurrent search, email alerts, and CSV export powered by the Duffel Air API.",
+    longDescription: "Fly Planner is a Next.js 14 web application that helps users discover cheap flights by searching every combination of dates within a flexible window simultaneously. The app fans out concurrent requests to the Duffel Air API to check all date pairs and surfaces the best deals in real time. Users can search one-way or round-trip itineraries, filter for direct flights, and sort results by price, date, or duration. Additional power-user features include CSV export for offline analysis and a weekly email alert subscription system (powered by Resend) with one-click unsubscribe, backed by a PostgreSQL database managed with Prisma ORM on Neon.",
+    tags: ["Next.js", "TypeScript", "Duffel API", "PostgreSQL", "Prisma"],
+    imageUrl: "",
+    liveUrl: "https://fly-panner-g0kri35mh-jeremys-projects-12e3ce68.vercel.app",
+    githubUrl: "https://github.com/renhotsai/fly-panner",
+    features: [
+      "Flexible date-window search that checks every date combination concurrently",
+      "One-way and round-trip itinerary support",
+      "Direct flight filtering to exclude layovers",
+      "Sortable results by price, date, and duration",
+      "CSV export for offline flight comparison",
+      "Weekly email alert subscriptions with one-click unsubscribe",
+      "Cron-job driven price monitoring (up to 20 date pairs per subscription)",
+      "Quota-aware engine (50 max date combinations, 4 concurrent workers)",
+      "PostgreSQL persistence via Neon and Prisma ORM",
+      "Deployed on Vercel with serverless API routes"
+    ],
+    techStack: {
+      frontend: ["Next.js 14", "TypeScript 5", "Tailwind CSS 3"],
+      backend: ["Next.js API Routes", "Node.js", "Prisma 5 ORM"],
+      database: ["PostgreSQL", "Neon"],
+      services: ["Duffel Air API", "Resend", "Vercel Cron Jobs"],
+      tools: ["Git", "Vercel", "Prisma CLI"]
+    },
+    challenges: [
+      "Designing a concurrent fan-out architecture to query all date combinations without hitting API rate limits",
+      "Implementing quota management (50 combinations, 4 workers) for stable performance",
+      "Building a reliable email subscription and alert system with one-click unsubscribe",
+      "Managing Prisma schema and database migrations on serverless PostgreSQL via Neon",
+      "Integrating Vercel Cron Jobs for scheduled price monitoring across user subscriptions"
+    ],
+    learnings: [
+      "Concurrent API fan-out patterns and rate-limit-aware request scheduling",
+      "Duffel Air API integration and flight data modeling",
+      "Prisma ORM with serverless PostgreSQL on Neon",
+      "Transactional email delivery with Resend",
+      "Vercel Cron Jobs for scheduled background tasks",
+      "Full-stack TypeScript development with Next.js App Router"
+    ]
+  },
   "car-rent": {
     id: "car-rent",
     title: "RentEV - Electric Vehicle Rental Platform",
