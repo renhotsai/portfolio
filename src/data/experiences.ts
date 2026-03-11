@@ -2,14 +2,14 @@ export const experiences = [
 	{
 		title: "Backend Engineer",
 		company: "Collaborate Technology",
-		period: "April 2021 - August 2023",
+		period: "April 2021 – August 2023",
 		location: "Taipei, Taiwan",
-		badges: ["C#", "RESTful APIs", "MSSQL", "Payment Systems", "Database Optimization"],
+		badges: ["C#", "RESTful APIs", "MSSQL", "Payment Systems", "Claude", "Database Optimization"],
 		responsibilities: [
-			"Designed and integrated RESTful APIs with third-party payment systems, ensuring secure and reliable transaction processing",
-			"Developed comprehensive logging systems to track payment transactions, enabling rapid debugging and improving system reliability",
-			"Optimized complex MSSQL database operations and queries, resulting in improved performance and faster response times",
-			"Collaborated with cross-functional teams to deliver scalable backend solutions supporting high-volume transactions"
+			"Integrated RESTful APIs with third-party payment systems, orchestrating complex data flows between internal services and external payment providers",
+			"Leveraged Claude to accelerate debugging and code review cycles — surfacing edge cases in payment transaction logic before QA handoff",
+			"Implemented robust logging mechanisms for payment transactions; used Claude Code to rapidly scaffold diagnostic scripts and log parsers",
+			"Managed and optimized complex MSSQL operations, using Claude-assisted query analysis to identify index improvements and reduce execution time"
 		]
 	},
 	{
@@ -17,12 +17,11 @@ export const experiences = [
 		company: "Harmonation Inc.",
 		period: "November 2020 – April 2021",
 		location: "Taipei, Taiwan",
-		badges: ["C#", "Windows Applications", "MSSQL", "Banking Systems", "UI/UX"],
+		badges: ["C#", "Windows Applications", "MSSQL", "Banking Systems", "Claude Code"],
 		responsibilities: [
-			"Developed and optimized Windows applications for banking sector, improving user interface efficiency and reducing transaction processing time",
-			"Built robust C# applications with MSSQL database integration, enhancing data retrieval capabilities and system performance",
-			"Implemented database optimization strategies that significantly improved query response times and overall application performance",
-			"Delivered solutions that increased customer satisfaction through improved application reliability and user experience"
+			"Tailored Windows desktop applications for banking workflows in C#, improving transaction processing speed and reducing UI friction for tellers",
+			"Used Claude Code to prototype and iterate on MSSQL data-access layers, enabling faster delivery without sacrificing code quality",
+			"Implemented optimized database queries and stored procedures, improving data retrieval performance across core banking modules"
 		]
 	}
 ];
