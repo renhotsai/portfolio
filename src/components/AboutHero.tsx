@@ -20,7 +20,7 @@ const AboutHero = () => {
 					Grounded in TypeScript, Node.js, C#, and modern full-stack technologies, with ongoing cloud computing
 					studies at George Brown College.
 				</p>
-				<Link href="/resume/JeremyTsai-2025.pdf" target="_blank" rel="noopener noreferrer">
+				<Link href="/resume/JeremyTsai2026.pdf" target="_blank" rel="noopener noreferrer">
 					<Button>Download Resume</Button>
 				</Link>
 			</div>
