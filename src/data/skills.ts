@@ -1,5 +1,4 @@
 export const skills = {
-	"AI & Developer Tools": ["Claude (Anthropic)", "Claude Code", "AI-assisted development", "Prompt Engineering"],
 	Programming: ["JavaScript", "TypeScript", "Swift", "Kotlin", "C#", "Node.js"],
 	"Web & Frontend": ["Next.js", "React", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
 	"Mobile Development": ["React Native", "iOS Development", "Android Development", "Expo"],
