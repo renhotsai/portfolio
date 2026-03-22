@@ -34,8 +34,15 @@ export const projectsData: Record<string, ProjectDetail> = {
     description: "Born from a personal frustration of manually checking flight prices day after day, Fly Panner lets you define a flexible date range, instantly scans every date combination via Duffel Air API, and subscribes you to weekly email alerts — built AI-first with Claude Code, backed by PostgreSQL and Resend.",
     longDescription: "Fly Panner started from a real problem: I was planning a trip and needed to find the cheapest flights, but manually browsing each date one by one was exhausting — and coming back every day to re-check was even worse. I wanted a smarter way: set a departure and return date range, fire off all combinations at once, and get results ranked by price immediately. And when I found a good route, I didn't want to keep checking — I wanted it to just tell me every week.\n\nThis project was built AI-first using Claude Code, which accelerated architecture decisions, API design, database schema, and the email pipeline. The app is built on Next.js 14 (App Router) with TypeScript, uses the Duffel Air API for real-time flight pricing, and Prisma with Neon PostgreSQL to persist subscriptions. Every Monday, a Vercel cron job triggers the alert pipeline — Resend delivers styled weekly digest emails to all active subscribers, each containing a secure one-click unsubscribe link.\n\nThe search engine scans up to 50 date combinations concurrently, with results filterable to direct-only flights and sortable by price, departure date, duration, or stops. Results can also be exported to CSV for offline analysis.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Duffel Air API", "Prisma", "PostgreSQL", "Resend", "Claude Code", "AI-Assisted"],
-    imageUrl: "",
-    liveUrl: "https://fly-panner-g0kri35mh-jeremys-projects-12e3ce68.vercel.app",
+    imageUrl: "/Images/fly-panner-0.png",
+    images: [
+      {
+        url: "/Images/fly-panner-0.png",
+        title: "Flight Search Results",
+        description: "Round-trip flight search from YYZ to TPE showing ranked results by price, with Best Deal highlighted, stop details, and airline info"
+      }
+    ],
+    liveUrl: "https://fly-panner.vercel.app",
     githubUrl: "https://github.com/renhotsai/fly-panner",
     features: [
       "Flexible date range search — scans up to 50 departure and return date combinations concurrently",
