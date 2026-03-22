@@ -595,6 +595,87 @@ export const projectsData: Record<string, ProjectDetail> = {
       "Educational project development with real-world application scenarios"
     ]
   },
+  "stock-review": {
+    id: "stock-review",
+    title: "BOS Stock Tracker",
+    description: "A bilingual (English/Chinese) stock watchlist web app with AI-powered analysis, real-time price updates from Yahoo Finance, and price zone indicators to help investors identify Buy Zone, Fair Zone, and Overvalued conditions.",
+    longDescription: "BOS Stock Tracker is a full-stack web application designed for value investors to track and analyze US stocks. Users can build a personal watchlist, and the AI automatically queries financial data to assign a confidence score and calculate fair entry and review price targets for each stock. The app supports bilingual UI (English and Chinese) and fetches live prices from Yahoo Finance every 20 minutes. Each stock is color-coded by price zone — green for Buy Zone (current ≤ fair entry), yellow for Fair Zone, and red for Overvalued — giving investors an at-a-glance assessment of market conditions. A high-confidence filter highlights stocks with scores ≥ 7.5. Users can add new stocks via an AI analysis pipeline that takes 15–30 seconds to query and evaluate all relevant financial data.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Claude AI", "Yahoo Finance API", "AI-Assisted", "Bilingual"],
+    imageUrl: "/Images/stock-review-0.jpg",
+    images: [
+      {
+        url: "/Images/stock-review-0.jpg",
+        title: "Main Dashboard",
+        description: "Stock watchlist overview with price zone color-coding — green for Buy Zone, yellow for Fair Zone, and red for Overvalued"
+      },
+      {
+        url: "/Images/stock-review-1.jpg",
+        title: "AI Analysis Results",
+        description: "AI-powered stock analysis showing confidence scores, fair entry price, and review price targets"
+      },
+      {
+        url: "/Images/stock-review-2.jpg",
+        title: "Add Stock Flow",
+        description: "Ticker input and AI analysis pipeline that queries financial data and populates all fields in 15–30 seconds"
+      },
+      {
+        url: "/Images/stock-review-3.jpg",
+        title: "Price Zone Indicators",
+        description: "Color-coded price zone classification with Buy Zone, Fair Zone, and Overvalued status indicators"
+      },
+      {
+        url: "/Images/stock-review-4.jpg",
+        title: "High Confidence Filter",
+        description: "Filtered view highlighting stocks with confidence scores ≥ 7.5 for strong investment candidates"
+      },
+      {
+        url: "/Images/stock-review-5.jpg",
+        title: "Bilingual UI",
+        description: "Seamless English and Traditional Chinese language switching across the entire application"
+      },
+      {
+        url: "/Images/stock-review-6.jpg",
+        title: "Stock Detail View",
+        description: "Individual stock detail page with full analysis breakdown, price targets, and stock type tagging"
+      }
+    ],
+    liveUrl: "https://stock-review-seven.vercel.app",
+    githubUrl: "https://github.com/renhotsai/stock-review",
+    features: [
+      "Personal stock watchlist with real-time price updates every 20 minutes via Yahoo Finance",
+      "AI-powered stock analysis that auto-queries financial data and assigns a confidence score",
+      "Price zone classification — Buy Zone, Fair Zone, and Overvalued — based on current vs. target prices",
+      "High-confidence filter highlighting stocks with scores ≥ 7.5",
+      "Bilingual UI with seamless English and Traditional Chinese switching",
+      "Add stock flow: enter a ticker, AI runs analysis in 15–30 seconds and populates all data",
+      "Fair Entry and Review Price targets calculated per stock",
+      "Stock type tagging (Dividends, Growth) for quick categorization",
+      "Edit and delete stocks from the watchlist",
+      "Detailed stock view page for each tracked company",
+      "User authentication with secure login and registration",
+      "Deployed on Vercel with serverless architecture"
+    ],
+    techStack: {
+      frontend: ["Next.js", "TypeScript", "Tailwind CSS", "App Router"],
+      backend: ["Next.js API Routes", "Claude AI API", "Yahoo Finance API"],
+      services: ["Claude AI (stock analysis & scoring)", "Yahoo Finance (live price data)", "Vercel (deployment)"],
+      tools: ["Git", "npm", "Vercel"]
+    },
+    challenges: [
+      "Designing an AI pipeline that queries financial data and produces a structured confidence score and price targets",
+      "Integrating Yahoo Finance for real-time price polling without exceeding rate limits",
+      "Implementing bilingual UI (EN/ZH) with clean state management across the entire app",
+      "Building price zone logic that dynamically classifies each stock based on live price vs. AI-set targets",
+      "Handling the async AI analysis flow with user-friendly loading states and timing feedback"
+    ],
+    learnings: [
+      "Claude AI API integration for structured financial data extraction and scoring",
+      "Yahoo Finance API usage for real-time stock price retrieval",
+      "Bilingual (i18n) UI patterns in Next.js without a dedicated i18n library",
+      "Serverless deployment on Vercel with Next.js App Router and API routes",
+      "Designing investment-focused UX with clear data hierarchy and color-coded status indicators"
+    ]
+  },
   "smartshop": {
     id: "smartshop",
     title: "SmartShop",
