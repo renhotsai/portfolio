@@ -8,13 +8,15 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import AboutHero from "@/components/AboutHero";
 import Link from "next/link";
 import { useState } from "react";
-import { Briefcase, GraduationCap } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { skills } from "@/data/skills";
 import { certificates } from "@/data/certificates";
 import { experiences } from "@/data/experiences";
 import { education } from "@/data/education";
-import { pipeline } from "@/data/pipeline";
+
+
+
+
+
 
 const AboutPage = () => {
 	const [selectedCertificate, setSelectedCertificate] = useState(certificates[0]);
@@ -29,31 +31,47 @@ const AboutPage = () => {
 					</div>
 				</div>
 
-				{/* Right Side */}
-				<div className="lg:col-span-8 space-y-8">
-
-					{/* Short Timeline Summary */}
-					<div>
-						<h2 className="text-lg font-semibold mb-4">My Journey</h2>
-						<div className="relative border-l-2 border-border ml-4">
-							{pipeline.map((entry, index) => {
-								const isWork = entry.type === "work";
-								const Icon = isWork ? Briefcase : GraduationCap;
-								return (
-									<div key={index} className="relative pl-6 pb-5 last:pb-0">
-										<span className={cn(
-											"absolute left-0 top-[3px] -translate-x-1/2 flex h-4 w-4 items-center justify-center rounded-full border-2 bg-background",
-											isWork ? "border-primary" : "border-blue-500"
-										)}>
-											<Icon className={cn("h-2.5 w-2.5", isWork ? "text-primary" : "text-blue-500")} />
-										</span>
-										<p className="text-sm font-medium leading-tight">{entry.title}</p>
-										<p className="text-xs text-muted-foreground mt-0.5">
-											{entry.subtitle} · {entry.period}
-										</p>
-									</div>
-								);
-							})}
+				{/* Right Side - Desktop Tabs / Mobile Overview */}
+				<div className="lg:col-span-8">
+					{/* Mobile: Simple overview with navigation hints */}
+					<div className="md:hidden">
+						<div className="space-y-6">
+							<div>
+								<h2 className="text-xl font-semibold mb-4">Explore My Background</h2>
+								<p className="text-muted-foreground mb-6">
+									Use the menu above to navigate through different sections of my professional profile.
+								</p>
+							</div>
+							<div className="grid grid-cols-2 gap-4">
+								<Link
+									href="/about/skills"
+									className="p-4 border rounded-lg hover:shadow-md transition-all"
+								>
+									<h3 className="font-medium mb-2">Skills</h3>
+									<p className="text-sm text-muted-foreground">Technical expertise</p>
+								</Link>
+								<Link
+									href="/about/experience"
+									className="p-4 border rounded-lg hover:shadow-md transition-all"
+								>
+									<h3 className="font-medium mb-2">Experience</h3>
+									<p className="text-sm text-muted-foreground">Work history</p>
+								</Link>
+								<Link
+									href="/about/education"
+									className="p-4 border rounded-lg hover:shadow-md transition-all"
+								>
+									<h3 className="font-medium mb-2">Education</h3>
+									<p className="text-sm text-muted-foreground">Academic background</p>
+								</Link>
+								<Link
+									href="/about/certificates"
+									className="p-4 border rounded-lg hover:shadow-md transition-all"
+								>
+									<h3 className="font-medium mb-2">Certificates</h3>
+									<p className="text-sm text-muted-foreground">Certifications</p>
+								</Link>
+							</div>
 						</div>
 					</div>
 
@@ -134,12 +152,15 @@ const AboutPage = () => {
 							<Card className="transition-all duration-300 hover:shadow-lg">
 								<CardContent className="p-0">
 									<div className="grid grid-cols-1 lg:grid-cols-4">
+										{/* Mobile/Desktop Certificate Display */}
 										<div className="lg:col-span-3 order-2 lg:order-1 p-4 md:p-6 border-b lg:border-b-0 lg:border-r">
 											<div className="space-y-4">
 												<div>
 													<h3 className="text-lg font-semibold">{selectedCertificate.title}</h3>
 													<p className="text-muted-foreground text-sm">{selectedCertificate.description}</p>
 												</div>
+
+												{/* Desktop PDF Viewer */}
 												<div className="hidden lg:block">
 													<iframe
 														src={selectedCertificate.pdfUrl}
@@ -147,6 +168,8 @@ const AboutPage = () => {
 														title={selectedCertificate.title}
 													/>
 												</div>
+
+												{/* Mobile-friendly Download Link */}
 												<div className="lg:hidden">
 													<div className="bg-muted rounded-lg p-6 text-center space-y-4">
 														<div className="text-6xl">📜</div>
@@ -156,16 +179,22 @@ const AboutPage = () => {
 																Tap the button below to view or download the certificate
 															</p>
 															<Link href={selectedCertificate.pdfUrl} target="_blank" rel="noopener noreferrer">
-																<Button className="w-full">View Certificate</Button>
+																<Button className="w-full">
+																	View Certificate
+																</Button>
 															</Link>
 														</div>
 													</div>
 												</div>
 											</div>
 										</div>
+
+										{/* Certificate List */}
 										<div className="lg:col-span-1 order-1 lg:order-2 p-4 md:p-6">
 											<div className="space-y-4">
 												<h3 className="text-lg font-semibold">Certificates</h3>
+
+												{/* Mobile: Horizontal Scroll */}
 												<div className="lg:hidden">
 													<div className="flex gap-2 overflow-x-auto pb-2">
 														{certificates.map((cert) => (
@@ -179,11 +208,15 @@ const AboutPage = () => {
 																}`}
 															>
 																<div className="font-medium text-sm">{cert.title}</div>
-																<div className="text-xs text-muted-foreground mt-1 line-clamp-2">{cert.description}</div>
+																<div className="text-xs text-muted-foreground mt-1 line-clamp-2">
+																	{cert.description}
+																</div>
 															</button>
 														))}
 													</div>
 												</div>
+
+												{/* Desktop: Vertical List */}
 												<div className="hidden lg:block">
 													<ScrollArea className="h-[500px]">
 														<div className="space-y-1 pr-1">
@@ -198,7 +231,9 @@ const AboutPage = () => {
 																	}`}
 																>
 																	<div className="text-sm font-medium">{cert.title}</div>
-																	<div className="text-xs text-muted-foreground mt-1 line-clamp-2">{cert.description}</div>
+																	<div className="text-xs text-muted-foreground mt-1 line-clamp-2">
+																		{cert.description}
+																	</div>
 																</button>
 															))}
 														</div>
@@ -211,29 +246,6 @@ const AboutPage = () => {
 							</Card>
 						</TabsContent>
 					</Tabs>
-
-					{/* Mobile: navigation cards */}
-					<div className="md:hidden">
-						<div className="grid grid-cols-2 gap-4">
-							<Link href="/about/skills" className="p-4 border rounded-lg hover:shadow-md transition-all">
-								<h3 className="font-medium mb-2">Skills</h3>
-								<p className="text-sm text-muted-foreground">Technical expertise</p>
-							</Link>
-							<Link href="/about/experience" className="p-4 border rounded-lg hover:shadow-md transition-all">
-								<h3 className="font-medium mb-2">Experience</h3>
-								<p className="text-sm text-muted-foreground">Work history</p>
-							</Link>
-							<Link href="/about/education" className="p-4 border rounded-lg hover:shadow-md transition-all">
-								<h3 className="font-medium mb-2">Education</h3>
-								<p className="text-sm text-muted-foreground">Academic background</p>
-							</Link>
-							<Link href="/about/certificates" className="p-4 border rounded-lg hover:shadow-md transition-all">
-								<h3 className="font-medium mb-2">Certificates</h3>
-								<p className="text-sm text-muted-foreground">Certifications</p>
-							</Link>
-						</div>
-					</div>
-
 				</div>
 			</div>
 		</div>
