@@ -11,6 +11,8 @@ import {
   Mail,
   Code,
   GitMerge,
+  Briefcase,
+  GraduationCap,
   Award,
   ChevronDown,
   ChevronRight,
@@ -29,11 +31,13 @@ import { Separator } from "@/components/ui/separator";
 const MobileSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isPipelineOpen, setIsPipelineOpen] = useState(false);
   const pathname = usePathname();
 
   const closeSidebar = () => {
     setIsOpen(false);
     setIsAboutOpen(false);
+    setIsPipelineOpen(false);
   };
 
   const isActive = (path: string) => pathname === path;
@@ -132,18 +136,51 @@ const MobileSidebar = () => {
                     <Code className="h-3 w-3" />
                     Skills
                   </Link>
-                  <Link
-                    href="/about/pipeline"
-                    onClick={closeSidebar}
-                    className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${
-                      isActive("/about/pipeline")
-                        ? "bg-primary/20 text-primary font-medium"
-                        : "hover:bg-muted/30 text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    <GitMerge className="h-3 w-3" />
-                    Pipeline
-                  </Link>
+                  <Collapsible open={isPipelineOpen} onOpenChange={setIsPipelineOpen}>
+                    <CollapsibleTrigger
+                      className={`flex items-center justify-between w-full px-3 py-2 rounded-lg text-sm transition-colors ${
+                        pathname.startsWith("/about/pipeline") || pathname.startsWith("/about/experience") || pathname.startsWith("/about/education")
+                          ? "bg-primary/20 text-primary font-medium"
+                          : "hover:bg-muted/30 text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <GitMerge className="h-3 w-3" />
+                        Pipeline
+                      </div>
+                      {isPipelineOpen ? (
+                        <ChevronDown className="h-3 w-3" />
+                      ) : (
+                        <ChevronRight className="h-3 w-3" />
+                      )}
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="pl-5 mt-1 space-y-1">
+                      <Link
+                        href="/about/experience"
+                        onClick={closeSidebar}
+                        className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${
+                          isActive("/about/experience")
+                            ? "bg-primary/20 text-primary font-medium"
+                            : "hover:bg-muted/30 text-muted-foreground hover:text-foreground"
+                        }`}
+                      >
+                        <Briefcase className="h-3 w-3" />
+                        Experience
+                      </Link>
+                      <Link
+                        href="/about/education"
+                        onClick={closeSidebar}
+                        className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${
+                          isActive("/about/education")
+                            ? "bg-primary/20 text-primary font-medium"
+                            : "hover:bg-muted/30 text-muted-foreground hover:text-foreground"
+                        }`}
+                      >
+                        <GraduationCap className="h-3 w-3" />
+                        Education
+                      </Link>
+                    </CollapsibleContent>
+                  </Collapsible>
                   <Link
                     href="/about/certificates"
                     onClick={closeSidebar}
