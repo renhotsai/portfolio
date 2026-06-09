@@ -39,6 +39,10 @@ export const education = [
 		degree: "Bachelor of Information Technology",
 		period: "September 2011 – June 2015",
 		location: "Taichung, Taiwan",
-		details: []
+		details: [
+			"Fundamentals of C++ programming and object-oriented concepts",
+			"Android application development",
+			"Electronic circuits and circuit analysis"
+		]
 	}
 ];
