@@ -32,5 +32,13 @@ export const education = [
 			"App Store and Android Market submission processes",
 			"Work-integrated project"
 		]
+	},
+	{
+		title: "Bachelor's Degree Program",
+		school: "Ling Tung University of Technology (嶺東科技大學)",
+		degree: "Bachelor's Degree",
+		period: "September 2011 – June 2015",
+		location: "Taichung, Taiwan",
+		details: []
 	}
 ];

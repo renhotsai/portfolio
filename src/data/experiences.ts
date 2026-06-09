@@ -24,5 +24,19 @@ export const experiences = [
 			"Implemented database optimization strategies that significantly improved query response times and overall application performance",
 			"Delivered solutions that increased customer satisfaction through improved application reliability and user experience"
 		]
+	},
+	{
+		title: "Artillery Observer (下士觀測士)",
+		company: "ROC Army Artillery (中華民國陸軍砲兵)",
+		period: "August 2015 – August 2020",
+		location: "Taiwan",
+		badges: ["Field Artillery", "Tactical Operations", "Forward Observation", "Team Leadership", "Military Communications"],
+		responsibilities: [
+			"Conducted forward observation missions to identify and report enemy positions, providing accurate fire adjustment data to artillery units",
+			"Coordinated fire support missions between infantry and artillery battalions, ensuring precise and timely engagement of designated targets",
+			"Operated observation equipment and military communications systems in field conditions",
+			"Supervised and trained junior enlisted personnel in observation techniques and operational procedures",
+			"Maintained unit readiness and upheld discipline standards throughout a five-year service commitment"
+		]
 	}
 ];
