@@ -26,8 +26,8 @@ export const experiences = [
 		]
 	},
 	{
-		title: "Artillery Observer (下士觀測士)",
-		company: "ROC Army Artillery (中華民國陸軍砲兵)",
+		title: "Artillery Observer",
+		company: "ROC Army Artillery",
 		period: "August 2015 – August 2020",
 		location: "Taiwan",
 		badges: ["Field Artillery", "Tactical Operations", "Forward Observation", "Team Leadership", "Military Communications"],
