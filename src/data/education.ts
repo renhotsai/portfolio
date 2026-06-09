@@ -35,7 +35,7 @@ export const education = [
 	},
 	{
 		title: "Information Technology Program",
-		school: "Ling Tung University of Technology (嶺東科技大學)",
+		school: "Ling Tung University (嶺東科技大學)",
 		degree: "Bachelor of Information Technology",
 		period: "September 2011 – June 2015",
 		location: "Taichung, Taiwan",
