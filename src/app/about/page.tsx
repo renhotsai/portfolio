@@ -33,43 +33,8 @@ const AboutPage = () => {
 
 				{/* Right Side - Desktop Tabs / Mobile Overview */}
 				<div className="lg:col-span-8">
-					{/* Mobile: Simple overview with navigation hints */}
-					<div className="md:hidden">
-						<div className="space-y-6">
-							<div>
-								<h2 className="text-xl font-semibold mb-4">Explore My Background</h2>
-								<p className="text-muted-foreground mb-6">
-									Use the menu above to navigate through different sections of my professional profile.
-								</p>
-							</div>
-							<div className="grid grid-cols-2 gap-4">
-								<Link
-									href="/about/skills"
-									className="p-4 border rounded-lg hover:shadow-md transition-all"
-								>
-									<h3 className="font-medium mb-2">Skills</h3>
-									<p className="text-sm text-muted-foreground">Technical expertise</p>
-								</Link>
-								<Link
-									href="/about/pipeline"
-									className="p-4 border rounded-lg hover:shadow-md transition-all"
-								>
-									<h3 className="font-medium mb-2">Pipeline</h3>
-									<p className="text-sm text-muted-foreground">Experience &amp; education</p>
-								</Link>
-								<Link
-									href="/about/certificates"
-									className="p-4 border rounded-lg hover:shadow-md transition-all"
-								>
-									<h3 className="font-medium mb-2">Certificates</h3>
-									<p className="text-sm text-muted-foreground">Certifications</p>
-								</Link>
-							</div>
-						</div>
-					</div>
-
-					{/* Desktop: Full Tab Interface */}
-					<Tabs defaultValue="skills" className="w-full hidden md:block">
+					{/* Tab Interface (all screen sizes) */}
+					<Tabs defaultValue="skills" className="w-full">
 						<TabsList className="grid w-full grid-cols-3 gap-1">
 							<TabsTrigger value="skills" className="text-sm">Skills</TabsTrigger>
 							<TabsTrigger value="pipeline" className="text-sm">Pipeline</TabsTrigger>
