@@ -10,8 +10,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { skills } from "@/data/skills";
 import { certificates } from "@/data/certificates";
-import { experiences } from "@/data/experiences";
-import { education } from "@/data/education";
+import { pipeline } from "@/data/pipeline";
+import PipelineTimeline from "@/components/PipelineTimeline";
 
 
 
@@ -51,18 +51,11 @@ const AboutPage = () => {
 									<p className="text-sm text-muted-foreground">Technical expertise</p>
 								</Link>
 								<Link
-									href="/about/experience"
+									href="/about/pipeline"
 									className="p-4 border rounded-lg hover:shadow-md transition-all"
 								>
-									<h3 className="font-medium mb-2">Experience</h3>
-									<p className="text-sm text-muted-foreground">Work history</p>
-								</Link>
-								<Link
-									href="/about/education"
-									className="p-4 border rounded-lg hover:shadow-md transition-all"
-								>
-									<h3 className="font-medium mb-2">Education</h3>
-									<p className="text-sm text-muted-foreground">Academic background</p>
+									<h3 className="font-medium mb-2">Pipeline</h3>
+									<p className="text-sm text-muted-foreground">Experience &amp; education</p>
 								</Link>
 								<Link
 									href="/about/certificates"
@@ -77,10 +70,9 @@ const AboutPage = () => {
 
 					{/* Desktop: Full Tab Interface */}
 					<Tabs defaultValue="skills" className="w-full hidden md:block">
-						<TabsList className="grid w-full grid-cols-4 gap-1">
+						<TabsList className="grid w-full grid-cols-3 gap-1">
 							<TabsTrigger value="skills" className="text-sm">Skills</TabsTrigger>
-							<TabsTrigger value="experience" className="text-sm">Experience</TabsTrigger>
-							<TabsTrigger value="education" className="text-sm">Education</TabsTrigger>
+							<TabsTrigger value="pipeline" className="text-sm">Pipeline</TabsTrigger>
 							<TabsTrigger value="certificates" className="text-sm">Certificates</TabsTrigger>
 						</TabsList>
 
@@ -105,47 +97,8 @@ const AboutPage = () => {
 							</div>
 						</TabsContent>
 
-						<TabsContent value="experience" className="mt-8">
-							<div className="space-y-8">
-								{experiences.map((exp, index) => (
-									<div key={index} className="border-l-2 border-primary pl-6 py-4">
-										<h3 className="text-2xl font-semibold mb-2">{exp.title}</h3>
-										<p className="text-muted-foreground text-lg mb-1">{exp.company}</p>
-										<p className="text-sm text-muted-foreground mb-4">{exp.period} • {exp.location}</p>
-										<div className="flex flex-wrap gap-2 mb-4">
-											{exp.badges.map((badge, i) => (
-												<Badge key={i} variant="secondary">{badge}</Badge>
-											))}
-										</div>
-										<ul className="space-y-2 list-disc pl-5">
-											{exp.responsibilities.map((item, i) => (
-												<li key={i}>{item}</li>
-											))}
-										</ul>
-									</div>
-								))}
-							</div>
-						</TabsContent>
-
-						<TabsContent value="education" className="mt-8">
-							<div className="space-y-8">
-								{education.map((edu, index) => (
-									<div key={index} className="border-l-2 border-primary pl-6 py-4">
-										<h3 className="text-2xl font-semibold mb-2">{edu.title}</h3>
-										<p className="text-muted-foreground text-lg mb-1">
-											{edu.school} • {edu.degree}
-										</p>
-										<p className="text-sm text-muted-foreground mb-4">
-											{edu.period} • {edu.location}
-										</p>
-										<ul className="space-y-1 list-disc pl-5">
-											{edu.details.map((detail, i) => (
-												<li key={i}>{detail}</li>
-											))}
-										</ul>
-									</div>
-								))}
-							</div>
+						<TabsContent value="pipeline" className="mt-8">
+							<PipelineTimeline entries={pipeline} />
 						</TabsContent>
 
 						<TabsContent value="certificates" className="mt-8">

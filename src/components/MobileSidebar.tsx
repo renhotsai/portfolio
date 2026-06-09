@@ -10,8 +10,7 @@ import {
   User,
   Mail,
   Code,
-  Briefcase,
-  GraduationCap,
+  GitMerge,
   Award,
   ChevronDown,
   ChevronRight,
@@ -134,28 +133,16 @@ const MobileSidebar = () => {
                     Skills
                   </Link>
                   <Link
-                    href="/about/experience"
+                    href="/about/pipeline"
                     onClick={closeSidebar}
                     className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${
-                      isActive("/about/experience")
+                      isActive("/about/pipeline")
                         ? "bg-primary/20 text-primary font-medium"
                         : "hover:bg-muted/30 text-muted-foreground hover:text-foreground"
                     }`}
                   >
-                    <Briefcase className="h-3 w-3" />
-                    Experience
-                  </Link>
-                  <Link
-                    href="/about/education"
-                    onClick={closeSidebar}
-                    className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${
-                      isActive("/about/education")
-                        ? "bg-primary/20 text-primary font-medium"
-                        : "hover:bg-muted/30 text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    <GraduationCap className="h-3 w-3" />
-                    Education
+                    <GitMerge className="h-3 w-3" />
+                    Pipeline
                   </Link>
                   <Link
                     href="/about/certificates"
