@@ -6,18 +6,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import AboutHero from "@/components/AboutHero";
-import PipelineTimeline from "@/components/PipelineTimeline";
 import Link from "next/link";
 import { useState } from "react";
+import { Briefcase, GraduationCap } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { skills } from "@/data/skills";
 import { certificates } from "@/data/certificates";
+import { experiences } from "@/data/experiences";
+import { education } from "@/data/education";
 import { pipeline } from "@/data/pipeline";
 
 const AboutPage = () => {
 	const [selectedCertificate, setSelectedCertificate] = useState(certificates[0]);
-
-	const workEntries = pipeline.filter(e => e.type === "work");
-	const eduEntries = pipeline.filter(e => e.type === "education");
 
 	return (
 		<div className="container py-12 md:py-16">
@@ -30,9 +30,35 @@ const AboutPage = () => {
 				</div>
 
 				{/* Right Side */}
-				<div className="lg:col-span-8">
-					{/* Tab Interface — all screen sizes, Experience shown by default */}
-					<Tabs defaultValue="experience" className="w-full">
+				<div className="lg:col-span-8 space-y-8">
+
+					{/* Short Timeline Summary */}
+					<div>
+						<h2 className="text-lg font-semibold mb-4">My Journey</h2>
+						<div className="relative border-l-2 border-border ml-4">
+							{pipeline.map((entry, index) => {
+								const isWork = entry.type === "work";
+								const Icon = isWork ? Briefcase : GraduationCap;
+								return (
+									<div key={index} className="relative pl-6 pb-5 last:pb-0">
+										<span className={cn(
+											"absolute left-0 top-[3px] -translate-x-1/2 flex h-4 w-4 items-center justify-center rounded-full border-2 bg-background",
+											isWork ? "border-primary" : "border-blue-500"
+										)}>
+											<Icon className={cn("h-2.5 w-2.5", isWork ? "text-primary" : "text-blue-500")} />
+										</span>
+										<p className="text-sm font-medium leading-tight">{entry.title}</p>
+										<p className="text-xs text-muted-foreground mt-0.5">
+											{entry.subtitle} · {entry.period}
+										</p>
+									</div>
+								);
+							})}
+						</div>
+					</div>
+
+					{/* Desktop: Full Tab Interface */}
+					<Tabs defaultValue="skills" className="w-full hidden md:block">
 						<TabsList className="grid w-full grid-cols-4 gap-1">
 							<TabsTrigger value="skills" className="text-sm">Skills</TabsTrigger>
 							<TabsTrigger value="experience" className="text-sm">Experience</TabsTrigger>
@@ -62,11 +88,46 @@ const AboutPage = () => {
 						</TabsContent>
 
 						<TabsContent value="experience" className="mt-8">
-							<PipelineTimeline entries={workEntries} />
+							<div className="space-y-8">
+								{experiences.map((exp, index) => (
+									<div key={index} className="border-l-2 border-primary pl-6 py-4">
+										<h3 className="text-2xl font-semibold mb-2">{exp.title}</h3>
+										<p className="text-muted-foreground text-lg mb-1">{exp.company}</p>
+										<p className="text-sm text-muted-foreground mb-4">{exp.period} • {exp.location}</p>
+										<div className="flex flex-wrap gap-2 mb-4">
+											{exp.badges.map((badge, i) => (
+												<Badge key={i} variant="secondary">{badge}</Badge>
+											))}
+										</div>
+										<ul className="space-y-2 list-disc pl-5">
+											{exp.responsibilities.map((item, i) => (
+												<li key={i}>{item}</li>
+											))}
+										</ul>
+									</div>
+								))}
+							</div>
 						</TabsContent>
 
 						<TabsContent value="education" className="mt-8">
-							<PipelineTimeline entries={eduEntries} />
+							<div className="space-y-8">
+								{education.map((edu, index) => (
+									<div key={index} className="border-l-2 border-primary pl-6 py-4">
+										<h3 className="text-2xl font-semibold mb-2">{edu.title}</h3>
+										<p className="text-muted-foreground text-lg mb-1">
+											{edu.school} • {edu.degree}
+										</p>
+										<p className="text-sm text-muted-foreground mb-4">
+											{edu.period} • {edu.location}
+										</p>
+										<ul className="space-y-1 list-disc pl-5">
+											{edu.details.map((detail, i) => (
+												<li key={i}>{detail}</li>
+											))}
+										</ul>
+									</div>
+								))}
+							</div>
 						</TabsContent>
 
 						<TabsContent value="certificates" className="mt-8">
@@ -150,6 +211,29 @@ const AboutPage = () => {
 							</Card>
 						</TabsContent>
 					</Tabs>
+
+					{/* Mobile: navigation cards */}
+					<div className="md:hidden">
+						<div className="grid grid-cols-2 gap-4">
+							<Link href="/about/skills" className="p-4 border rounded-lg hover:shadow-md transition-all">
+								<h3 className="font-medium mb-2">Skills</h3>
+								<p className="text-sm text-muted-foreground">Technical expertise</p>
+							</Link>
+							<Link href="/about/experience" className="p-4 border rounded-lg hover:shadow-md transition-all">
+								<h3 className="font-medium mb-2">Experience</h3>
+								<p className="text-sm text-muted-foreground">Work history</p>
+							</Link>
+							<Link href="/about/education" className="p-4 border rounded-lg hover:shadow-md transition-all">
+								<h3 className="font-medium mb-2">Education</h3>
+								<p className="text-sm text-muted-foreground">Academic background</p>
+							</Link>
+							<Link href="/about/certificates" className="p-4 border rounded-lg hover:shadow-md transition-all">
+								<h3 className="font-medium mb-2">Certificates</h3>
+								<p className="text-sm text-muted-foreground">Certifications</p>
+							</Link>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
