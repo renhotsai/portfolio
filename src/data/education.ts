@@ -37,7 +37,7 @@ export const education = [
 		title: "Information Technology Program",
 		school: "Ling Tung University (嶺東科技大學)",
 		degree: "Bachelor of Information Technology",
-		period: "September 2010 – June 2014",
+		period: "September 2011 – June 2015",
 		location: "Taichung, Taiwan",
 		details: []
 	}
