@@ -5,7 +5,7 @@ import { PipelineEntry } from "@/data/pipeline";
 
 export default function PipelineTimeline({ entries }: { entries: PipelineEntry[] }) {
 	return (
-		<div className="relative border-l-2 border-border ml-2 space-y-0">
+		<div className="relative border-l-2 border-border ml-4 space-y-0">
 			{entries.map((entry, index) => {
 				const isWork = entry.type === "work";
 				const Icon = isWork ? Briefcase : GraduationCap;
@@ -13,11 +13,11 @@ export default function PipelineTimeline({ entries }: { entries: PipelineEntry[]
 					<div key={index} className="relative pl-8 md:pl-10 pb-8 md:pb-10 last:pb-0">
 						<span
 							className={cn(
-								"absolute -left-[9px] top-[22px] flex h-4 w-4 items-center justify-center rounded-full border-2 bg-background",
+								"absolute left-0 top-[20px] -translate-x-1/2 z-10 flex h-5 w-5 items-center justify-center rounded-full border-2 bg-background",
 								isWork ? "border-primary" : "border-blue-500"
 							)}
 						>
-							<Icon className={cn("h-2 w-2", isWork ? "text-primary" : "text-blue-500")} />
+							<Icon className={cn("h-3 w-3", isWork ? "text-primary" : "text-blue-500")} />
 						</span>
 
 						<div className="flex items-center gap-2 mb-2">
