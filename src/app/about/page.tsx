@@ -6,12 +6,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import AboutHero from "@/components/AboutHero";
+import PipelineTimeline from "@/components/PipelineTimeline";
 import Link from "next/link";
 import { useState } from "react";
 import { skills } from "@/data/skills";
 import { certificates } from "@/data/certificates";
 import { experiences } from "@/data/experiences";
 import { education } from "@/data/education";
+import { pipeline } from "@/data/pipeline";
 
 
 
@@ -32,7 +34,13 @@ const AboutPage = () => {
 				</div>
 
 				{/* Right Side - Desktop Tabs / Mobile Overview */}
-				<div className="lg:col-span-8">
+				<div className="lg:col-span-8 space-y-10">
+
+					{/* Full Pipeline Timeline */}
+					<section>
+						<h2 className="text-xl font-semibold mb-6">Experience &amp; Education</h2>
+						<PipelineTimeline entries={pipeline} />
+					</section>
 					{/* Mobile: Simple overview with navigation hints */}
 					<div className="md:hidden">
 						<div className="space-y-6">

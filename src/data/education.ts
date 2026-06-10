@@ -32,5 +32,17 @@ export const education = [
 			"App Store and Android Market submission processes",
 			"Work-integrated project"
 		]
+	},
+	{
+		title: "Information Technology Program",
+		school: "Ling Tung University",
+		degree: "Bachelor of Information Technology",
+		period: "September 2011 – June 2015",
+		location: "Taichung, Taiwan",
+		details: [
+			"Fundamentals of C++ programming and object-oriented concepts",
+			"Android application development",
+			"Electronic circuits and circuit analysis"
+		]
 	}
 ];
