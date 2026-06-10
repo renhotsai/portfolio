@@ -26,7 +26,7 @@ export const experiences = [
 		]
 	},
 	{
-		title: "Artillery Observer",
+		title: "Corporal, Forward Observer",
 		company: "ROC Army Artillery",
 		period: "August 2015 – August 2020",
 		location: "Taiwan",
