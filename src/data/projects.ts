@@ -22,6 +22,7 @@ export interface ProjectDetail extends ProjectCardProps {
     services?: string[];
     tools?: string[];
   };
+  architectureDescription?: string;
   challenges?: string[];
   learnings?: string[];
 }
@@ -511,6 +512,7 @@ export const projectsData: Record<string, ProjectDetail> = {
       infrastructure: ["Auto Scaling Groups", "EC2", "Security Groups", "IAM"],
       services: ["AWS Textract", "Amazon S3", "Lambda", "ECS", "ECR"]
     },
+    architectureDescription: "Public traffic enters through CloudFront CDN and Route 53 DNS, then routes to an Application Load Balancer in a public subnet. Containerized Next.js services run in private subnets via Amazon ECS, backed by an Auto Scaling Group of EC2 instances. Serverless Lambda functions handle event-driven tasks — resume uploads to Amazon S3 trigger Lambda which calls AWS Textract for AI-powered document parsing and extracts structured data. Amazon RDS PostgreSQL (private subnet) stores user profiles and job listings. VPC security groups and IAM roles enforce least-privilege access between all components, keeping the database and containers isolated from direct internet exposure.",
     challenges: [
       "Designing hybrid serverless and containerized architecture",
       "Implementing AI document processing with AWS Textract",
@@ -605,7 +607,7 @@ export const projectsData: Record<string, ProjectDetail> = {
   "stock-review": {
     id: "stock-review",
     title: "BOS Stock Tracker",
-    description: "A bilingual (English/Chinese) stock watchlist web app with AI-powered analysis, real-time price updates from Yahoo Finance, and price zone indicators to help investors identify Buy Zone, Fair Zone, and Overvalued conditions.",
+    description: "Full-stack stock analysis platform integrating the Claude AI API for confidence scoring and fair-value pricing. Features real-time Yahoo Finance price polling, Buy/Fair/Overvalued zone classification, and bilingual EN/ZH support — built with Next.js and deployed on Vercel.",
     longDescription: "BOS Stock Tracker is a full-stack web application designed for value investors to track and analyze US stocks. Users can build a personal watchlist, and the AI automatically queries financial data to assign a confidence score and calculate fair entry and review price targets for each stock. The app supports bilingual UI (English and Chinese) and fetches live prices from Yahoo Finance every 20 minutes. Each stock is color-coded by price zone — green for Buy Zone (current ≤ fair entry), yellow for Fair Zone, and red for Overvalued — giving investors an at-a-glance assessment of market conditions. A high-confidence filter highlights stocks with scores ≥ 7.5. Users can add new stocks via an AI analysis pipeline that takes 15–30 seconds to query and evaluate all relevant financial data.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Claude AI", "Yahoo Finance API", "AI-Assisted", "Bilingual"],
     imageUrl: "/Images/stock-review-0.jpg",
@@ -668,6 +670,7 @@ export const projectsData: Record<string, ProjectDetail> = {
       services: ["Claude AI (stock analysis & scoring)", "Yahoo Finance (live price data)", "Vercel (deployment)"],
       tools: ["Git", "npm", "Vercel"]
     },
+    architectureDescription: "Built on Next.js with a fully serverless pipeline: when a user adds a stock ticker, a Next.js API route calls the Claude AI API with a financial analysis prompt, which returns a structured confidence score, fair entry price, and review price target. Live prices are fetched from Yahoo Finance API every 20 minutes via client-side polling. All data is persisted in a PostgreSQL database and served back through Next.js API routes. The entire stack — frontend, API routes, and cron-style polling — is deployed on Vercel, with no separate backend server required.",
     challenges: [
       "Designing an AI pipeline that queries financial data and produces a structured confidence score and price targets",
       "Integrating Yahoo Finance for real-time price polling without exceeding rate limits",

@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import AboutHero from "@/components/AboutHero";
 import MobileBreadcrumb from "@/components/MobileBreadcrumb";
 import { experiences } from "@/data/experiences";
+
+export const metadata: Metadata = {
+  title: "Experience",
+  description: "Jeremy Tsai's background: 2+ years backend engineering in Taipei, George Brown College cloud & mobile certificates, skills in Node.js, TypeScript, AWS, Azure, and Docker.",
+};
 
 const ExperiencePage = () => {
 	return (
@@ -28,6 +34,13 @@ const ExperiencePage = () => {
 
 					{/* Experience Timeline */}
 					<div className="space-y-6 md:space-y-8">
+						<p className="text-muted-foreground">
+							Backend Engineer with 2+ years of professional experience building RESTful APIs,
+							payment system integrations, and cloud-native infrastructure. Holds dual Ontario
+							College Graduate Certificates in Cloud Computing (AWS/Azure) and Mobile Application
+							Development from George Brown College. Currently based in Toronto and open to
+							Backend, Full-Stack, or Cloud Engineer roles.
+						</p>
 						{experiences.map((exp, index) => (
 							<div key={index} className="border-l-2 border-primary pl-4 md:pl-6 py-3 md:py-4">
 								<h3 className="text-lg md:text-2xl font-semibold mb-2">{exp.title}</h3>
