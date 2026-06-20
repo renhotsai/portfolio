@@ -37,7 +37,7 @@ export default function Home() {
           </div>
         </MotionWrap>
         <MotionWrap delay={0.3} className="mt-8 md:mt-12">
-          <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 max-w-md mx-auto">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 max-w-lg mx-auto">
             <Link href="/projects" className="w-full sm:w-auto">
               <Button size="lg" className="w-full min-h-[48px] text-base">
                 Explore My Work
@@ -48,6 +48,11 @@ export default function Home() {
                 Learn About Me
               </Button>
             </Link>
+            <a href="/resume/Jeremy_Tsai_202606.pdf" download="Jeremy_Tsai_202606.pdf" className="w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="w-full min-h-[48px] text-base">
+                Download Resume
+              </Button>
+            </a>
           </div>
         </MotionWrap>
       </div>

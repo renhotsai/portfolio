@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import MobileSidebar from '@/components/MobileSidebar';
+import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
 
@@ -33,6 +34,13 @@ const Navbar = () => {
               Contact
             </Link>
           </nav>
+        </div>
+        <div className="hidden md:flex ml-auto">
+          <a href="/resume/Jeremy_Tsai_202606.pdf" download="Jeremy_Tsai_202606.pdf">
+            <Button size="sm" variant="outline">
+              Resume
+            </Button>
+          </a>
         </div>
 
         {/* Mobile Navigation */}
