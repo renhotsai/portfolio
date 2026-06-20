@@ -1,6 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 const AboutHero = () => {
 	return (
@@ -20,9 +19,9 @@ const AboutHero = () => {
 					Grounded in TypeScript, Node.js, C#, and modern full-stack technologies, with ongoing cloud computing
 					studies at George Brown College.
 				</p>
-				<Link href="/resume/JeremyTsai2026.pdf" target="_blank" rel="noopener noreferrer">
+				<a href="/resume/Jeremy_Tsai_202606.pdf" download="Jeremy_Tsai_202606.pdf">
 					<Button>Download Resume</Button>
-				</Link>
+				</a>
 			</div>
 		</div>
 	);

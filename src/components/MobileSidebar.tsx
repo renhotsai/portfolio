@@ -15,6 +15,7 @@ import {
   Award,
   ChevronDown,
   ChevronRight,
+  Download,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -187,6 +188,19 @@ const MobileSidebar = () => {
                 <Mail className="h-4 w-4" />
                 Contact
               </Link>
+
+              <Separator className="my-2" />
+
+              {/* Resume Download */}
+              <a
+                href="/resume/Jeremy_Tsai_202606.pdf"
+                download="Jeremy_Tsai_202606.pdf"
+                onClick={closeSidebar}
+                className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors hover:bg-muted/50 text-muted-foreground hover:text-foreground"
+              >
+                <Download className="h-4 w-4" />
+                Download Resume
+              </a>
             </nav>
           </div>
         </SheetContent>
