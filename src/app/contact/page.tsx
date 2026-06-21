@@ -55,7 +55,7 @@ const ContactPage = () => {
       <div className="max-w-2xl mx-auto text-center">
         <h1 className="text-4xl font-bold mb-4">Get In Touch</h1>
         <p className="text-lg text-muted-foreground mb-10">
-          I&#39;m currently open to new opportunities. Feel free to send me a message!
+          I&#39;m actively looking for Backend or Full-Stack Engineering roles in the Greater Toronto Area. Feel free to send me a message!
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-14">

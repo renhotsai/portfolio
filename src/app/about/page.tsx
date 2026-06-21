@@ -9,7 +9,7 @@ import AboutHero from "@/components/AboutHero";
 import PipelineTimeline from "@/components/PipelineTimeline";
 import Link from "next/link";
 import { useState } from "react";
-import { skills } from "@/data/skills";
+import { primarySkills, familiarSkills } from "@/data/skills";
 import { certificates } from "@/data/certificates";
 import { experiences } from "@/data/experiences";
 import { education } from "@/data/education";
@@ -92,24 +92,48 @@ const AboutPage = () => {
 							<TabsTrigger value="certificates" className="text-sm">Certificates</TabsTrigger>
 						</TabsList>
 
-						<TabsContent value="skills" className="mt-8">
-							<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-								{Object.entries(skills).map(([category, items]) => (
-									<Card key={category} className="transition-all duration-300 hover:shadow-lg">
-										<CardHeader className="pb-3">
-											<CardTitle className="text-lg">{category}</CardTitle>
-										</CardHeader>
-										<CardContent>
-											<div className="flex flex-wrap gap-2">
-												{items.map((item) => (
-													<Badge key={item} variant="secondary" className="text-sm px-3 py-1">
-														{item}
-													</Badge>
-												))}
-											</div>
-										</CardContent>
-									</Card>
-								))}
+						<TabsContent value="skills" className="mt-8 space-y-8">
+							<div>
+								<h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Primary Stack</h3>
+								<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+									{Object.entries(primarySkills).map(([category, items]) => (
+										<Card key={category} className="transition-all duration-300 hover:shadow-lg border-primary/30">
+											<CardHeader className="pb-3">
+												<CardTitle className="text-lg">{category}</CardTitle>
+											</CardHeader>
+											<CardContent>
+												<div className="flex flex-wrap gap-2">
+													{items.map((item) => (
+														<Badge key={item} variant="default" className="text-sm px-3 py-1">
+															{item}
+														</Badge>
+													))}
+												</div>
+											</CardContent>
+										</Card>
+									))}
+								</div>
+							</div>
+							<div>
+								<h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Also Familiar With</h3>
+								<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+									{Object.entries(familiarSkills).map(([category, items]) => (
+										<Card key={category} className="transition-all duration-300 hover:shadow-lg">
+											<CardHeader className="pb-3">
+												<CardTitle className="text-lg">{category}</CardTitle>
+											</CardHeader>
+											<CardContent>
+												<div className="flex flex-wrap gap-2">
+													{items.map((item) => (
+														<Badge key={item} variant="secondary" className="text-sm px-3 py-1">
+															{item}
+														</Badge>
+													))}
+												</div>
+											</CardContent>
+										</Card>
+									))}
+								</div>
 							</div>
 						</TabsContent>
 

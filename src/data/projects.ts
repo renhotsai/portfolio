@@ -6,9 +6,11 @@ export interface ProjectCardProps {
   imageUrl: string;
   liveUrl?: string;
   githubUrl?: string;
+  featured?: boolean;
 }
 
 export interface ProjectDetail extends ProjectCardProps {
+  featured?: boolean;
   longDescription: string;
   images?: { url: string; title: string; description?: string }[];
   features: string[];
@@ -30,6 +32,7 @@ export interface ProjectDetail extends ProjectCardProps {
 export const projectsData: Record<string, ProjectDetail> = {
   "fly-panner": {
     id: "fly-panner",
+    featured: true,
     title: "Fly Panner - Flexible Flight Search & Weekly Price Alerts",
     description: "Born from a personal frustration of manually checking flight prices day after day, Fly Panner lets you define a flexible date range, instantly scans every date combination via Duffel Air API, and subscribes you to weekly email alerts — built AI-first with Claude Code, backed by PostgreSQL and Resend.",
     longDescription: "Fly Panner started from a real problem: I was planning a trip and needed to find the cheapest flights, but manually browsing each date one by one was exhausting — and coming back every day to re-check was even worse. I wanted a smarter way: set a departure and return date range, fire off all combinations at once, and get results ranked by price immediately. And when I found a good route, I didn't want to keep checking — I wanted it to just tell me every week.\n\nThis project was built AI-first using Claude Code, which accelerated architecture decisions, API design, database schema, and the email pipeline. The app is built on Next.js 14 (App Router) with TypeScript, uses the Duffel Air API for real-time flight pricing, and Prisma with Neon PostgreSQL to persist subscriptions. Every Monday, a Vercel cron job triggers the alert pipeline — Resend delivers styled weekly digest emails to all active subscribers, each containing a secure one-click unsubscribe link.\n\nThe search engine scans up to 50 date combinations concurrently, with results filterable to direct-only flights and sortable by price, departure date, duration, or stops. Results can also be exported to CSV for offline analysis.",
@@ -461,6 +464,7 @@ export const projectsData: Record<string, ProjectDetail> = {
   },
   "ace-my-career": {
     id: "ace-my-career",
+    featured: true,
     title: "Ace My Career",
     description: "Enterprise-scale job search platform built on AWS hybrid architecture combining serverless Lambda functions and containerized ECS services with AI-powered document processing.",
     longDescription: "Ace My Career is a sophisticated cloud-native job search platform featuring a hybrid AWS architecture that combines serverless Lambda functions with containerized ECS services. The platform leverages Docker containers managed by ECS with Auto Scaling Groups, AWS Textract for AI-powered resume parsing, Amazon S3 for secure document storage, and RDS PostgreSQL for data persistence. The architecture includes VPC networking, CloudFront CDN for global content delivery, Route 53 for DNS management, and Application Load Balancers for traffic distribution, ensuring enterprise-grade scalability, security, and performance.",
