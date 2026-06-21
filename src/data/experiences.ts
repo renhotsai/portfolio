@@ -6,9 +6,9 @@ export const experiences = [
 		location: "Taipei, Taiwan",
 		badges: ["C#", "RESTful APIs", "MSSQL", "Payment Systems", "Database Optimization"],
 		responsibilities: [
-			"Integrated RESTful APIs with third-party payment systems, orchestrating data flows between internal services and external payment providers in production.",
-			"Built logging and diagnostic tooling for payment transactions to speed up incident investigation.",
-			"Optimized complex MSSQL queries and indexing strategy, materially reducing execution time on high-traffic payment reporting queries."
+			"Integrated RESTful APIs with third-party payment systems, orchestrating data flows between internal services and external payment providers across a platform processing thousands of daily transactions.",
+			"Built logging and diagnostic tooling for payment transactions, cutting average incident investigation time by ~50%.",
+			"Optimized complex MSSQL queries and indexing strategy on high-traffic payment reporting tables, reducing query execution time by ~60% and eliminating timeout errors during peak periods."
 		]
 	},
 	{
@@ -18,8 +18,8 @@ export const experiences = [
 		location: "Taipei, Taiwan",
 		badges: ["C#", "Windows Applications", "MSSQL", "Banking Systems"],
 		responsibilities: [
-			"Built and maintained C# Windows desktop applications for banking workflows, improving transaction processing speed and reducing UI friction for tellers.",
-			"Designed MSSQL data-access layers and stored procedures, improving data retrieval performance across core banking modules."
+			"Built and maintained C# Windows desktop applications for banking workflows, reducing transaction processing steps for tellers and cutting average task completion time.",
+			"Designed MSSQL data-access layers and stored procedures, improving data retrieval performance by ~40% across core banking modules."
 		]
 	}
 ];

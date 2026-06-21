@@ -9,12 +9,17 @@ interface ExtendedProjectCardProps extends ProjectCardProps {
   isCentered?: boolean;
 }
 
-const ProjectCard = ({ id, title, description, tags, imageUrl, liveUrl, githubUrl, isCentered = false }: ExtendedProjectCardProps) => {
+const ProjectCard = ({ id, title, description, tags, imageUrl, liveUrl, githubUrl, featured, isCentered = false }: ExtendedProjectCardProps) => {
   const cardContent = (
     <>
       <CardHeader className="p-4 md:p-6">
         <div className="aspect-video relative mb-3 md:mb-4">
           <Image src={imageUrl} alt={title} fill className="object-cover rounded-t-lg" />
+          {featured && (
+            <span className="absolute top-2 left-2 bg-primary text-primary-foreground text-xs font-semibold px-2 py-0.5 rounded-full">
+              Featured
+            </span>
+          )}
         </div>
         <CardTitle className={`text-lg md:text-xl ${isCentered ? "hover:text-primary transition-colors" : ""}`}>{title}</CardTitle>
         <CardDescription className="text-sm md:text-base">{description}</CardDescription>

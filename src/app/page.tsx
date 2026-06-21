@@ -23,8 +23,8 @@ export default function Home() {
           delay={0.2}
           className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed px-2"
         >
-          Proficient in designing <span className="text-foreground font-medium">end-to-end application architecture</span> — spanning scalable <span className="text-foreground font-medium">API backends</span>, <span className="text-foreground font-medium">relational database schemas</span>, and <span className="text-foreground font-medium">cloud infrastructure on AWS</span>.
-          Skilled in <span className="text-foreground font-medium">AI-assisted development</span> — leveraging tools like <span className="text-foreground font-medium">Claude and Cursor</span> to accelerate delivery, and integrating <span className="text-foreground font-medium">LLM APIs</span> into production applications. Grounded in <span className="text-foreground font-medium">system design</span> and modern full-stack development.
+          I help teams <span className="text-foreground font-medium">ship reliable software faster</span> — designing scalable <span className="text-foreground font-medium">API backends</span>, <span className="text-foreground font-medium">cloud infrastructure on AWS</span>, and <span className="text-foreground font-medium">relational database schemas</span> that hold up in production.
+          I bring <span className="text-foreground font-medium">AI-assisted development</span> into everyday workflows — integrating <span className="text-foreground font-medium">LLM APIs</span> into products and using tools like <span className="text-foreground font-medium">Claude Code</span> to cut delivery time without cutting corners.
         </MotionWrap>
         <MotionWrap delay={0.25} className="mb-8 md:mb-12">
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 md:gap-6 text-sm md:text-base">
