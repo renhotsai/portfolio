@@ -1,11 +1,11 @@
 export const skills = {
-	Programming: ["JavaScript", "TypeScript", "Swift", "Kotlin", "C#", "Node.js"],
-	"Web & Frontend": ["Next.js", "React", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
+	"AI & Developer Tools": ["Claude (Anthropic)", "Claude Code", "AI-Assisted Development", "Prompt Engineering"],
+	Languages: ["JavaScript", "TypeScript", "C#", "Swift", "Kotlin"],
+	"Frameworks & Web": ["Node.js", "Express.js", "Nest.js", "Next.js", "React", "React Native", "HTML5", "CSS3", "Tailwind CSS"],
 	"Mobile Development": ["React Native", "iOS Development", "Android Development", "Expo"],
-	"Backend & APIs": ["Express.js", "Nest.js", "RESTful APIs", "Serverless Functions", "AWS Lambda"],
-	"Database & Storage": ["PostgreSQL", "MongoDB", "MSSQL", "Firebase", "Amazon S3", "Amazon RDS"],
-	"Cloud & DevOps": ["AWS", "Azure", "Docker", "Amazon ECS", "Amazon ECR", "CloudFront"],
+	"Backend & APIs": ["RESTful APIs", "Serverless Functions", "AWS Lambda"],
+	"Database & Storage": ["MSSQL", "PostgreSQL", "MongoDB", "Firebase", "Amazon S3", "Amazon RDS"],
+	"Cloud & DevOps": ["AWS", "Azure", "Microsoft 365", "Docker", "Amazon ECS", "Amazon ECR", "CloudFront", "Agile / Scrum"],
 	"AWS Services": ["AWS Textract", "VPC", "Route 53", "Application Load Balancer", "Auto Scaling Groups", "IAM"],
-	"AI & LLM": ["Claude API", "OpenAI API", "LLM Integration", "Cursor", "Prompt Engineering", "AI-Assisted Development"],
 	"Development Tools": ["Git", "VS Code", "Xcode", "Android Studio", "Expo CLI", "npm"]
 };

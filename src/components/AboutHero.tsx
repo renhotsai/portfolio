@@ -12,12 +12,9 @@ const AboutHero = () => {
 			<div className="space-y-4 md:space-y-6 text-center">
 				<h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">About Me</h1>
 				<p className="text-muted-foreground text-base md:text-lg max-w-2xl">
-					Full-Stack Engineer with 5+ years of experience, including 3+ years in professional backend and payment
-					system development. Skilled in end-to-end application architecture — from RESTful API design and
-					relational database schema planning to AWS cloud infrastructure. Proficient in AI-assisted development
-					using tools like Claude and Cursor, and experienced in integrating LLM APIs into production applications.
-					Grounded in TypeScript, Node.js, C#, and modern full-stack technologies, with ongoing cloud computing
-					studies at George Brown College.
+					Backend / Full-Stack Engineer with 2+ years building RESTful APIs and cloud-native services on AWS and
+					Azure. Skilled in C#, Node.js, and TypeScript, with hands-on use of Claude and Claude Code to speed up
+					development. Based in Toronto, ON — open to Backend, Full-Stack, or Cloud Engineering roles.
 				</p>
 				<a href="/resume/Jeremy_Tsai_202606.pdf" download="Jeremy_Tsai_202606.pdf">
 					<Button>Download Resume</Button>
