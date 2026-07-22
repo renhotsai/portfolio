@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#111a2e"/>
+    </linearGradient>
+    <linearGradient id="curveFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#22c55e" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#22c55e" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+
+  <!-- header -->
+  <text x="72" y="96" fill="#e2e8f0" font-size="44" font-weight="700">TradingBot</text>
+  <text x="72" y="138" fill="#64748b" font-size="22">Multi-Strategy Alpaca Paper Trading · SPY · QQQ · BTC/USD · GLD · USO</text>
+  <circle cx="1150" cy="84" r="8" fill="#22c55e"/>
+  <text x="1168" y="91" fill="#22c55e" font-size="20">LIVE</text>
+
+  <!-- equity curve panel -->
+  <rect x="72" y="180" width="760" height="380" rx="12" fill="#0f172a" stroke="#1e293b"/>
+  <text x="96" y="220" fill="#94a3b8" font-size="18">Equity Curve</text>
+  <g stroke="#1e293b" stroke-width="1">
+    <line x1="96" y1="280" x2="808" y2="280"/>
+    <line x1="96" y1="350" x2="808" y2="350"/>
+    <line x1="96" y1="420" x2="808" y2="420"/>
+    <line x1="96" y1="490" x2="808" y2="490"/>
+  </g>
+  <path d="M96 500 L160 480 L220 490 L280 450 L340 460 L400 420 L460 430 L520 380 L580 395 L640 340 L700 350 L760 300 L808 285 L808 530 L96 530 Z" fill="url(#curveFill)"/>
+  <path d="M96 500 L160 480 L220 490 L280 450 L340 460 L400 420 L460 430 L520 380 L580 395 L640 340 L700 350 L760 300 L808 285" fill="none" stroke="#22c55e" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- candlestick panel -->
+  <rect x="864" y="180" width="344" height="380" rx="12" fill="#0f172a" stroke="#1e293b"/>
+  <text x="888" y="220" fill="#94a3b8" font-size="18">Signals</text>
+  <g stroke-width="2">
+    <line x1="905" y1="260" x2="905" y2="380" stroke="#22c55e"/><rect x="893" y="290" width="24" height="60" fill="#22c55e"/>
+    <line x1="955" y1="300" x2="955" y2="420" stroke="#ef4444"/><rect x="943" y="320" width="24" height="70" fill="#ef4444"/>
+    <line x1="1005" y1="280" x2="1005" y2="400" stroke="#22c55e"/><rect x="993" y="310" width="24" height="55" fill="#22c55e"/>
+    <line x1="1055" y1="250" x2="1055" y2="370" stroke="#22c55e"/><rect x="1043" y="275" width="24" height="65" fill="#22c55e"/>
+    <line x1="1105" y1="290" x2="1105" y2="410" stroke="#ef4444"/><rect x="1093" y="315" width="24" height="60" fill="#ef4444"/>
+    <line x1="1155" y1="240" x2="1155" y2="360" stroke="#22c55e"/><rect x="1143" y="260" width="24" height="70" fill="#22c55e"/>
+  </g>
+  <text x="888" y="470" fill="#64748b" font-size="16">Mean Reversion · Momentum</text>
+  <text x="888" y="496" fill="#64748b" font-size="16">Trend Following</text>
+  <text x="888" y="536" fill="#22c55e" font-size="16">Risk: 1% equity / 1 ATR stop</text>
+
+  <!-- footer stats -->
+  <g font-size="18">
+    <rect x="72" y="592" width="268" height="72" rx="10" fill="#0f172a" stroke="#1e293b"/>
+    <text x="96" y="622" fill="#64748b">Scheduler</text>
+    <text x="96" y="650" fill="#e2e8f0">cron · every 1 min</text>
+    <rect x="360" y="592" width="268" height="72" rx="10" fill="#0f172a" stroke="#1e293b"/>
+    <text x="384" y="622" fill="#64748b">Database</text>
+    <text x="384" y="650" fill="#e2e8f0">Neon PostgreSQL</text>
+    <rect x="648" y="592" width="268" height="72" rx="10" fill="#0f172a" stroke="#1e293b"/>
+    <text x="672" y="622" fill="#64748b">Broker</text>
+    <text x="672" y="650" fill="#e2e8f0">Alpaca Markets API</text>
+    <rect x="936" y="592" width="272" height="72" rx="10" fill="#0f172a" stroke="#1e293b"/>
+    <text x="960" y="622" fill="#64748b">Hosting</text>
+    <text x="960" y="650" fill="#e2e8f0">Vercel Serverless</text>
+  </g>
+</svg>

@@ -30,6 +30,64 @@ export interface ProjectDetail extends ProjectCardProps {
 
 
 export const projectsData: Record<string, ProjectDetail> = {
+  "trading-bot": {
+    id: "trading-bot",
+    featured: true,
+    title: "TradingBot - Automated Multi-Strategy Trading System",
+    description: "An automated trading system for Alpaca Markets that runs three strategies — mean reversion, momentum breakout, and trend following — across equities, crypto, and commodities, with ATR-based risk management and a live monitoring dashboard, all running entirely on free cloud services.",
+    longDescription: "TradingBot is a fully automated trading system built to run entirely on free cloud infrastructure — no dedicated server required. Instead of a traditional long-running bot process, it uses a stateless, serverless architecture: cron-job.org calls a Next.js API route every minute, which reads state from Neon PostgreSQL, evaluates trading signals on newly closed bars, applies risk rules, executes orders through the Alpaca Markets API, and writes updated positions back to the database. A distributed lock prevents concurrent execution conflicts between overlapping cron ticks.\n\nThe bot trades five instruments (SPY, QQQ, BTC/USD, GLD, USO) using three distinct strategies matched to each asset class: mean reversion for equities, momentum breakout for crypto, and trend following for commodities. Risk management is central to the design — position sizing is ATR-based so a 1-ATR adverse move equals exactly 1% of account equity, every trade carries a hard stop at 1 ATR from entry, and trailing stops (2-3× ATR) ratchet from the best price. Correlation filters, market-hour restrictions for equities, and exponential backoff retry logic add further safeguards.\n\nA read-only dashboard built with React and Recharts refreshes every 15 seconds, displaying the equity curve, P&L metrics, open positions with unrealized gains and losses, and full trade history, with CSV exports for trade logs and daily performance summaries. The default configuration targets Alpaca's paper trading API for safe testing before any live deployment.",
+    tags: ["Next.js", "TypeScript", "Alpaca API", "Algorithmic Trading", "PostgreSQL", "Drizzle ORM", "Serverless", "Recharts"],
+    imageUrl: "/Images/trading-bot-0.svg",
+    images: [
+      {
+        url: "/Images/trading-bot-0.svg",
+        title: "System Overview",
+        description: "Multi-strategy trading system with equity curve monitoring, signal evaluation, and ATR-based risk management running on serverless infrastructure"
+      }
+    ],
+    liveUrl: "https://trading-bot-weld-phi.vercel.app",
+    githubUrl: "https://github.com/renhotsai/TradingBot",
+    features: [
+      "Three trading strategies matched to asset classes — mean reversion (equities), momentum breakout (crypto), trend following (commodities)",
+      "Trades five instruments: SPY, QQQ, BTC/USD, GLD, and USO via the Alpaca Markets API",
+      "Stateless, idempotent serverless architecture — cron tick every minute reads state, evaluates signals, and writes back to Postgres",
+      "ATR-based position sizing — a 1-ATR adverse move equals exactly 1% of account equity",
+      "Hard stop at 1 ATR from entry plus trailing stops (2-3× ATR) that ratchet from best price",
+      "Distributed lock to prevent concurrent execution conflicts between cron ticks",
+      "Correlation filters and market-hour restrictions for equity trades",
+      "Exponential backoff retry logic for resilient API communication",
+      "Read-only monitoring dashboard refreshing every 15 seconds with equity curve, P&L, open positions, and trade history",
+      "CSV export of detailed trade logs and daily performance summaries",
+      "Secured cron endpoint requiring a Bearer token in request headers",
+      "Runs entirely on free-tier services — Vercel Hobby, Neon PostgreSQL, and cron-job.org",
+      "Defaults to Alpaca paper trading for safe testing before live deployment"
+    ],
+    techStack: {
+      frontend: ["Next.js", "React", "TypeScript", "Recharts"],
+      backend: ["Next.js API Routes", "Alpaca Markets API", "cron-job.org Scheduler"],
+      database: ["PostgreSQL (Neon Serverless)", "Drizzle ORM"],
+      services: ["Alpaca Markets (brokerage & market data)", "Vercel (serverless hosting)", "Neon (database)", "cron-job.org (scheduling)"],
+      tools: ["Vitest", "Git", "npm", "Vercel"]
+    },
+    challenges: [
+      "Designing a stateless, idempotent trading engine that runs correctly as one-minute serverless invocations instead of a long-lived process",
+      "Implementing a distributed lock in Postgres to prevent overlapping cron ticks from executing duplicate orders",
+      "Building ATR-based position sizing and trailing stop logic that keeps every trade's risk at exactly 1% of account equity",
+      "Coordinating three different strategies across asset classes with different market hours and data characteristics",
+      "Keeping the entire system within free-tier limits of Vercel Hobby, Neon, and cron-job.org",
+      "Securing the cron endpoint with Bearer token authentication while keeping the dashboard strictly read-only"
+    ],
+    learnings: [
+      "Algorithmic trading strategy design — mean reversion, momentum breakout, and trend following signals",
+      "Risk management fundamentals: ATR-based position sizing, hard stops, and trailing stop mechanics",
+      "Alpaca Markets API integration for order execution, positions, and market data",
+      "Stateless serverless architecture patterns for workloads traditionally run as persistent processes",
+      "Distributed locking and idempotency techniques for safe concurrent execution",
+      "Drizzle ORM with Neon serverless PostgreSQL on Vercel",
+      "Unit testing trading logic with Vitest",
+      "Building real-time monitoring dashboards with React and Recharts"
+    ]
+  },
   "fly-panner": {
     id: "fly-panner",
     featured: true,
