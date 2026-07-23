@@ -12,10 +12,11 @@ const AboutHero = () => {
 			<div className="space-y-4 md:space-y-6 text-center">
 				<h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">About Me</h1>
 				<p className="text-muted-foreground text-base md:text-lg max-w-2xl">
-					Backend / Full-Stack Engineer with 2+ years of production experience building RESTful APIs and cloud-native
-					services on AWS and Azure. Skilled in C#, Node.js, and TypeScript. Relocated to Toronto to deepen cloud
-					and mobile expertise at George Brown College — currently targeting Backend or Full-Stack Engineering roles
-					in the Greater Toronto Area.
+					Full-Stack / Backend Engineer with 3 years of professional experience building payment system integrations,
+					banking applications, and RESTful APIs in Node.js, TypeScript, and C#. Cloud-certified through George Brown
+					College (AWS, Azure), with hands-on experience in Docker containerization, PostgreSQL/MSSQL optimization,
+					and production deployment. Legally entitled to work in Canada — currently targeting Backend or Full-Stack
+					Engineering roles in the Greater Toronto Area.
 				</p>
 				<a href="/resume/Jeremy_Tsai_202606.pdf" download="Jeremy_Tsai_202606.pdf">
 					<Button>Download Resume</Button>

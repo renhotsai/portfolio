@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Loader2 } from "lucide-react";
+import { Loader2, Mail } from "lucide-react";
 import Link from "next/link";
 import { useState, FormEvent } from "react";
 
@@ -59,6 +59,12 @@ const ContactPage = () => {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-14">
+          <Link href="mailto:renhotsai@gmail.com">
+            <Button variant="outline" className="gap-2">
+              <Mail className="h-5 w-5" />
+              Email
+            </Button>
+          </Link>
           <Link href="https://github.com/renhotsai" target="_blank">
             <Button variant="outline" className="gap-2">
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
