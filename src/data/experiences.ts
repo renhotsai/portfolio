@@ -7,7 +7,7 @@ export const experiences = [
 		badges: ["Inventory Management", "Cold Storage Operations", "Team Coordination"],
 		responsibilities: [
 			"Maintain inventory accuracy and product quality in a high-turnover cold storage environment, coordinating restocking with team leads.",
-			"Continuing to build personal engineering projects (Fly Panner, BOS Stock Tracker) in parallel."
+			"Continuing to build personal engineering projects (TradingBot, Fly Panner) in parallel."
 		]
 	},
 	{
@@ -42,6 +42,16 @@ export const experiences = [
 		responsibilities: [
 			"Built and maintained C# Windows desktop applications for banking workflows, reducing transaction processing steps for tellers and cutting average task completion time.",
 			"Designed MSSQL data-access layers and stored procedures, improving data retrieval performance by ~40% across core banking modules."
+		]
+	},
+	{
+		title: "Corporal, Artillery Observer",
+		company: "Republic of China (Taiwan) Army — Artillery",
+		period: "August 2015 – August 2020",
+		location: "Taiwan",
+		badges: ["Military Service", "Artillery Observation", "Discipline & Teamwork"],
+		responsibilities: [
+			"Completed five years of full-time military service as an artillery observation specialist, collecting and reporting target observation data to support fire direction."
 		]
 	}
 ];
