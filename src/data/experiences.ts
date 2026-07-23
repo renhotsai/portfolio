@@ -1,5 +1,27 @@
 export const experiences = [
 	{
+		title: "Produce Cooler Keeper",
+		company: "T&T Supermarket",
+		period: "March 2026 – Present",
+		location: "Toronto, ON",
+		badges: ["Inventory Management", "Cold Storage Operations", "Team Coordination"],
+		responsibilities: [
+			"Maintain inventory accuracy and product quality in a high-turnover cold storage environment, coordinating restocking with team leads.",
+			"Continuing to build personal engineering projects (Fly Panner, BOS Stock Tracker) in parallel."
+		]
+	},
+	{
+		title: "Fulfillment Associate",
+		company: "T&T Supermarket",
+		period: "September 2025 – March 2026",
+		location: "Toronto, ON",
+		badges: ["Order Fulfillment", "Logistics", "Cloud Certifications"],
+		responsibilities: [
+			"Picked and packed online grocery orders against tight delivery windows in a fast-paced, team-based environment.",
+			"Completed Cloud Computing Technologies certificate (Azure, AWS) part-time during this period."
+		]
+	},
+	{
 		title: "Backend Engineer",
 		company: "Collaborate Technology",
 		period: "April 2021 – August 2023",
