@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: {
+    default: "About",
+    template: "%s | Jeremy Tsai",
+  },
   description:
     "About Jeremy Tsai — Full-Stack / Backend Engineer with 3+ years of professional experience in payment integrations, banking applications, and RESTful APIs, cloud-certified in AWS and Azure.",
   alternates: {
