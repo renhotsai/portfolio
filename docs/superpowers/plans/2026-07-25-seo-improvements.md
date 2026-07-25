@@ -546,7 +546,10 @@ git commit -m "Add per-route metadata for /about and its subpages"
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: {
+    default: "Projects",
+    template: "%s | Jeremy Tsai",
+  },
   description:
     "A showcase of full-stack and backend projects by Jeremy Tsai, including a serverless algorithmic trading system, mobile apps, and RESTful API integrations.",
   alternates: {
