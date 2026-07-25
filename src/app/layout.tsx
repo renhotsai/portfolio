@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import { Suspense } from "react";
 import { PageSkeleton } from "@/components/SkeletonFallback";
-import { SITE_URL, SITE_NAME, SITE_TITLE, SITE_DESCRIPTION } from "@/lib/site-config";
+import { SITE_URL, SITE_NAME, SITE_TITLE, SITE_TITLE_TEMPLATE, SITE_DESCRIPTION } from "@/lib/site-config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: SITE_TITLE,
-    template: "%s | Jeremy Tsai",
+    template: SITE_TITLE_TEMPLATE,
   },
   description: SITE_DESCRIPTION,
   alternates: {

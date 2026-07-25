@@ -17,6 +17,10 @@ export async function generateMetadata({
     };
   }
 
+  const ogImage = project.imageUrl.toLowerCase().endsWith(".svg")
+    ? "/og-image.jpg"
+    : project.imageUrl;
+
   return {
     title: project.title,
     description: project.description,
@@ -26,13 +30,13 @@ export async function generateMetadata({
     openGraph: {
       title: project.title,
       description: project.description,
-      images: [{ url: project.imageUrl }],
+      images: [{ url: ogImage }],
     },
     twitter: {
       card: "summary_large_image",
       title: project.title,
       description: project.description,
-      images: [project.imageUrl],
+      images: [ogImage],
     },
   };
 }
